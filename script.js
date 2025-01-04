@@ -61,3 +61,14 @@ function setupImageGallery() {
 
 // Initialize image gallery interaction
 setupImageGallery();
+// Optional: Hover effect for the Officer in Charge section
+document.addEventListener("DOMContentLoaded", function() {
+    const officerSection = document.querySelector('.officer');
+
+    officerSection.addEventListener('mouseenter', function() {
+        officerSection.style.backgroundColor = '#e0f7fa';
+    });
+    officerSection.addEventListener('mouseleave', function() {
+        officerSection.style.backgroundColor = '#ffffff';
+    });
+});
