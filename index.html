@@ -58,7 +58,18 @@
         <p>At UG Prison Farm Kitalya, professionalism is not simply a trait—it is a foundational principle that guides every action taken in the rehabilitation journey.</p>
     </section>
 
-    <script src="script.js"></script>
+    <script src="script.js">// Get the officer's photo element
+        const officerPhoto = document.querySelector("#officer-photo img");
+        
+        // Add an event listener for hover effect
+        officerPhoto.addEventListener("mouseover", function() {
+            officerPhoto.style.transform = "scale(1.2)"; // Zoom in effect
+            officerPhoto.style.transition = "transform 0.3s ease"; // Smooth transition
+        });
+        
+        officerPhoto.addEventListener("mouseout", function() {
+            officerPhoto.style.transform = "scale(1)"; // Reset the scale to normal
+        });</script>
 </body>
 </html>
 <!-- Rehabilitation and Reintegration Section -->
