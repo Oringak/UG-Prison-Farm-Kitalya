@@ -1,322 +1,101 @@
-You said:
-you failed to respond to my request
-ChatGPT said:
-ChatGPT
+// 1. Smooth Scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-I apologize if I missed your request. Could you kindly clarify what you were asking for? I'll make sure to address it properly this time!
-You said:
-write for me both full and complete css and javascript codes for this html codes and make the text to be aligned in the center to make the page looks professonal and bold all the headings of the text and make it appear blue, make the background colour of the webpage appear maroon, and adjust the font size of all the headings to size 16. make the photo be able to zoom using javascript features, make the facility overview icons be interactive writ the code that display the photo in the overview icons<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UG Prison Farm Kitalya Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to UG Prison Farm Kitalya Website</h1>
-    </header>
-    
-    <!-- New Welcoming Section for Introduction -->
-    <section id="welcome">
-        <p>UG Prison Farm Kitalya stands as a symbol of profound rehabilitation and reintegration. Situated in the heart of Uganda, we are not just a correctional facility; we are a place where individuals embark on a transformative journey of self-discovery and growth. Through a unique blend of vocational training, psychological support, and ethical correctional practices, we strive to restore hope, dignity, and a sense of purpose to every inmate under our care.</p>
-        <p>Our core belief is that every individual, regardless of their past, deserves a second chance—an opportunity to rebuild their life and contribute positively to society. In our serene and supportive environment, inmates are equipped with essential skills and values that help them reintegrate into their communities as responsible, productive members. We go beyond traditional correctional methods, incorporating comprehensive rehabilitative programs that touch upon mental, emotional, and social well-being, ensuring that every person who leaves our facility does so with renewed hope and potential for a better tomorrow.</p>
-        <p>As part of our enduring commitment to human rights, we work tirelessly to uphold the values of respect, dignity, and opportunity for every individual. Our dedicated staff members are not just correctional officers; they are mentors, guides, and catalysts for change. Together, we make a collective effort to build a safer, more compassionate society by empowering those who have fallen into the shadows of crime to rise above their past and seize the promise of a brighter future.</p>
-  
-    </section>
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UG Prison Farm Kitalya Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Section: Roles of the Prison Farm in Rehabilitation -->
-    <section id="roles" class="content-section">
-        <h2>The Roles of UG Prison Farm Kitalya in Rehabilitation</h2>
-        <p>UG Prison Farm Kitalya plays a multifaceted role in the rehabilitation and reintegration of offenders into society. Our commitment extends to creating an atmosphere where personal growth, vocational training, and psychological healing intersect harmoniously, offering every individual the opportunity for a brighter future.</p>
-        <p>At the core of our rehabilitation model, we focus on:</p>
-        <ul>
-            <li><strong>Vocational Education and Skills Development</strong>Equipping inmates with essential technical skills such as farming, carpentry, tailoring, and other trades that are integral to their reintegration into society. These hands-on experiences prepare them to contribute meaningfully to their communities post-release.</li>
-            <li><strong>Psychological Counseling and Support</strong>Providing inmates with the emotional and psychological tools to understand their past actions, reconcile with their inner selves, and develop a sense of responsibility and accountability for their future choices.</li>
-            <li><strong>Community Engagement Programs</strong>Encouraging inmates to engage in social responsibility projects, which foster a sense of civic duty and belonging to the larger community, thus facilitating smoother transitions when they reenter society.</li>
-            <li><strong>Spiritual Guidance and Growth</strong>Recognizing the power of faith in transforming individuals, we offer spiritual programs that help inmates reflect upon their past, seek forgiveness, and embrace a renewed purpose in life.</li>
-        </ul>
-        <p>Through these combined approaches, UG Prison Farm Kitalya ensures that rehabilitation is not only a physical transformation but a holistic one that nurtures the body, mind, and spirit.</p>
-    </section>
+// 2. Toggle FAQ / Information Sections
+const toggleSections = document.querySelectorAll('.toggle-section');
+toggleSections.forEach(section => {
+    const button = section.querySelector('.toggle-button');
+    button.addEventListener('click', () => {
+        const content = section.querySelector('.toggle-content');
+        const isVisible = content.style.display === 'block';
+        content.style.display = isVisible ? 'none' : 'block';
+        button.textContent = isVisible ? 'Show More' : 'Show Less';
+    });
+});
 
-    <!-- Section: Professionalism of Correctional Officers -->
-    <section id="professionalism" class="content-section">
-        <h2>The Professional conducts of Our Correctional Officers</h2>
-        <p>The correctional officers at UG Prison Farm Kitalya are not merely custodians of discipline—they are dedicated professionals committed to the ethical treatment, mentorship, and rehabilitation of offenders. Their roles go beyond enforcing rules; they are a cornerstone of the transformative experience each inmate undergoes. Here’s how our officers contribute to the success of the rehabilitation process:</p>
-        <ul>
-            <li><strong>Exemplary Leadership</strong>Correctional officers provide strong, ethical leadership by modeling respect, patience, and fairness. Their ability to guide inmates through challenging emotional and psychological states while maintaining order and safety is pivotal to the success of the rehabilitation process.</li>
-            <li><strong>Comprehensive Training</strong>Every officer undergoes rigorous training not only in security protocols but also in crisis management, counseling, and restorative justice practices. This ensures that they are prepared to handle complex situations with empathy and professionalism.</li>
-            <li><strong>Commitment to Human Dignity</strong>Our officers are staunch advocates for the human rights of all individuals in their care. They ensure that every inmate is treated with dignity and respect, thus promoting an environment where personal growth is possible, regardless of past mistakes.</li>
-            <li><strong>Empathetic Mentorship</strong>The relationship between officers and inmates is rooted in mutual respect and understanding. Officers act as mentors, providing emotional support, encouragement, and guidance, empowering inmates to overcome personal obstacles and reintegrate successfully into society.</li>
-            <li><strong>Collaboration with Rehabilitation Experts</strong>Our correctional officers work in close partnership with psychologists, counselors, and other rehabilitation professionals to ensure that each inmate receives personalized care that aligns with their unique needs and challenges.</li>
-        </ul>
-        <p>At UG Prison Farm Kitalya, professionalism is not simply a trait—it is a foundational principle that guides every action taken in the rehabilitation journey.</p>
-    </section>
-    <script src="script.js"></script>
-</body>
-</html>
-<section class="rehabilitation">
-    <h2 style="text-align: center;">OUR REHABILITATION AND REINTEGRATION ROAD MAP</h2>
-    <ul style="list-style-type: disc; padding-left: 20px; max-width: 800px; margin: 0 auto; line-height: 1.6;">
-        <li>
-            At UG Prison Farm Kitalya, we hold the belief that true rehabilitation begins with recognizing the inherent dignity and worth of every individual. Our rehabilitation and reintegration services are carefully structured to uphold the highest standards of human rights, ensuring that those in our care are treated fairly and with respect throughout their journey toward transformation.
-        </li>
-        <li>
-            We are steadfast in our commitment to provide a holistic approach, addressing not only the criminal behavior of offenders but also the underlying social, psychological, and economic factors that may have contributed to their actions. Through a diverse array of programs—including psychological counseling, vocational training, educational advancement, and restorative justice—we endeavor to empower individuals to reintegrate meaningfully into society, ready to contribute as responsible and law-abiding citizens.
-        </li>
-        <li>
-            At the heart of our rehabilitation efforts lies the firm belief in human rights: ensuring that each person has access to a fair chance at personal reform. Our services are designed to be trauma-informed, providing a safe space where offenders are supported in confronting their past actions and preparing for a future beyond incarceration. By upholding human dignity and championing equality, we ensure that rehabilitation is not a process of punishment, but a journey toward healing and self-betterment.
-        </li>
-        <li>
-            Reintegration is equally paramount in our mission. We provide practical assistance in preparing offenders for life after release, with reintegration services that focus on family reunification, educational opportunities, employment readiness, and societal acceptance. This comprehensive model helps ease the transition from prison to community, thus significantly reducing the likelihood of re-offending.
-        </li>
-        <li>
-            The professionalism of our correctional officers is a key pillar in maintaining a conducive environment for rehabilitation. Our officers are trained not only in maintaining security but also in understanding the psychological, emotional, and social needs of the offenders. They are compassionate professionals dedicated to supporting inmates with the utmost respect, ensuring they are treated justly while receiving the necessary resources for rehabilitation.
-        </li>
-    </ul>
-</section>
-    <!-- Professionalism and Ethical Standards Section -->
-<section class="professionalism">
-        <h2>The Professionalism of Our Correctional Officers and their Ethical Standards</h2>
-        <p>
-            At UG Prison Farm Kitalya, the professionalism of our correctional officers is at the core of our operations. These highly trained individuals are not merely enforcers of rules but are dedicated mentors, guides, and supporters. They are trained in not only the technical aspects of their roles but also in the psychological, emotional, and social intricacies involved in the rehabilitation process.
-        </p>
-        <p>
-            Our officers are exemplars of integrity, accountability, and respect for human dignity. They are committed to maintaining a secure and conducive environment where offenders are treated with the respect they deserve, regardless of their past mistakes. This commitment extends to ensuring that the offenders’ rights are always upheld, promoting a culture of fairness, transparency, and empathy.
-        </p>
-        <p>
-            The professionalism of our staff is also reflected in their ability to apply ethical principles in all their actions. They operate under a strict code of ethics, which is grounded in the values of honesty, impartiality, and respect for the individual. Their conduct is continuously monitored to ensure that it meets the high standards set by our institution and the national framework for human rights.
-        </p>
-        <p>
-            The officers at UG Prison Farm Kitalya understand the delicate balance between maintaining security and fostering an environment conducive to rehabilitation. They are adept at employing non-coercive methods, utilizing communication and understanding to resolve conflicts and prevent violence. This ensures that their interactions with inmates are marked by respect, care, and professionalism, ultimately helping offenders feel heard, valued, and supported throughout their rehabilitative journey.
-        </p>
-        <p>
-            Ethical decision-making is a cornerstone of our operations. Officers are trained to make morally sound decisions that prioritize the well-being of inmates while upholding institutional safety. We ensure that all personnel adhere to a comprehensive ethical code that stresses the importance of fairness, human dignity, and transparency in every facet of their work.
-        </p>
-    </section>
-    <!-- Facility Overview Section -->
-<section class="facility-overview">
-        <h2>Facility Overview</h2>
-        <p>Discover the unique and transformative environment at UG Prison Farm Kitalya through the following images. These visuals provide a glimpse into the various aspects of our facility, from the rehabilitation areas to the agricultural projects that help in the reintegration process.</p>
-    
-        <div class="image-gallery">
-            <div class="image-item">
-                <img src="images/facility1.jpg" alt="Main Entrance of UG Prison Farm Kitalya">
-                <p class="caption">Main Entrance of UG Prison Farm Kitalya</p>
-            </div>
-            <div class="image-item">
-                <img src="images/facility2.jpg" alt="Rehabilitation Area">
-                <p class="caption">Rehabilitation Area</p>
-            </div>
-            <div class="image-item">
-                <img src="images/facility3.jpg" alt="Agricultural Training Section">
-                <p class="caption">Agricultural Training Section</p>
-            </div>
-            <div class="image-item">
-                <img src="images/facility4.jpg" alt="Community Service Projects">
-                <p class="caption">Community Service Projects</p>
-            </div>
-        </div>
-    </section>
-    <!-- Officer in Charge Section -->
-<section id="officer-in-charge">
-    <div class="officer">
-        <h3>S.P. Kenneth Andrew Byekwaso</h3>
-        <p><strong>Rank:</strong> Superintendent of Prisons (S.P.)</p>
-        <p><strong>Position:</strong> Officer in Charge of UG Prison Farm Kitalya</p>
-        <p><strong>Introduction:</strong> S.P. Kenneth Andrew Byekwaso, a man of remarkable intellect, is known for his outstanding leadership skills and unparalleled dedication to his work. His exceptional problem-solving abilities and strategic vision have led to the growth and stability of UG Prison Farm Kitalya, making him a cornerstone in the success of the institution. His calm demeanor and firm decision-making have earned him the respect and admiration of both his colleagues and subordinates. Under his leadership, the prison farm continues to thrive, contributing significantly to the nation’s correctional system and the rehabilitation of inmates.</p>
-    </div>
-</section>
-<section id="officer-photo">
-    <div>
-        <img src="images/kennethandrew.jpg" alt="Photo of S.P Kenneth Andrew Byekwaso" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-    </div>
-</section>
-ChatGPT said:
-ChatGPT
+// 3. Image Hover Effects
+const images = document.querySelectorAll('.image-item img');
+images.forEach(image => {
+    image.addEventListener('mouseover', () => {
+        image.style.transform = 'scale(1.1)';
+        image.style.transition = 'transform 0.3s ease-in-out';
+    });
+    image.addEventListener('mouseout', () => {
+        image.style.transform = 'scale(1)';
+    });
+});
 
-To achieve the design you are aiming for, here is the full CSS and JavaScript code along with the necessary HTML adjustments:
-HTML Code:
+// 4. Scroll Animations for elements that appear when scrolled into view
+const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UG Prison Farm Kitalya Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to UG Prison Farm Kitalya Website</h1>
-    </header>
-
-    <section id="welcome">
-        <p>UG Prison Farm Kitalya stands as a symbol of profound rehabilitation and reintegration. Situated in the heart of Uganda...</p>
-        <p>Our core belief is that every individual deserves a second chance...</p>
-        <p>As part of our enduring commitment to human rights...</p>
-    </section>
-
-    <section id="roles" class="content-section">
-        <h2>The Roles of UG Prison Farm Kitalya in Rehabilitation</h2>
-        <p>UG Prison Farm Kitalya plays a multifaceted role in the rehabilitation and reintegration of offenders into society...</p>
-        <ul>
-            <li><strong>Vocational Education and Skills Development</strong></li>
-            <li><strong>Psychological Counseling and Support</strong></li>
-            <li><strong>Community Engagement Programs</strong></li>
-            <li><strong>Spiritual Guidance and Growth</strong></li>
-        </ul>
-    </section>
-
-    <section id="professionalism" class="content-section">
-        <h2>The Professional Conduct of Our Correctional Officers</h2>
-        <p>The correctional officers at UG Prison Farm Kitalya are not merely custodians of discipline...</p>
-    </section>
-
-    <section class="rehabilitation">
-        <h2>OUR REHABILITATION AND REINTEGRATION ROAD MAP</h2>
-        <ul>
-            <li>At UG Prison Farm Kitalya, we hold the belief...</li>
-            <li>We are steadfast in our commitment...</li>
-            <li>At the heart of our rehabilitation efforts...</li>
-            <li>Reintegration is equally paramount in our mission...</li>
-        </ul>
-    </section>
-
-    <section class="facility-overview">
-        <h2>Facility Overview</h2>
-        <p>Discover the unique and transformative environment...</p>
-        <div class="image-gallery">
-            <div class="image-item">
-                <img src="images/facility1.jpg" alt="Main Entrance of UG Prison Farm Kitalya" class="zoom-image">
-                <p class="caption">Main Entrance of UG Prison Farm Kitalya</p>
-            </div>
-            <div class="image-item">
-                <img src="images/facility2.jpg" alt="Rehabilitation Area" class="zoom-image">
-                <p class="caption">Rehabilitation Area</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="officer-in-charge">
-        <h3>S.P. Kenneth Andrew Byekwaso</h3>
-        <p><strong>Rank:</strong> Superintendent of Prisons (S.P.)</p>
-        <p><strong>Position:</strong> Officer in Charge of UG Prison Farm Kitalya</p>
-    </section>
-
-    <section id="officer-photo">
-        <div>
-            <img src="images/kennethandrew.jpg" alt="Photo of S.P Kenneth Andrew Byekwaso" class="zoom-image">
-        </div>
-    </section>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
-CSS Code:
-
-/* General Styles */
-body {
-    background-color: maroon;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
 }
 
-h1, h2, h3 {
-    font-weight: bold;
-    color: blue;
-    font-size: 16px;
+function handleScroll() {
+    elementsToAnimate.forEach(element => {
+        if (isInViewport(element)) {
+            element.classList.add('fade-in');
+        }
+    });
 }
 
-p, ul {
-    font-size: 14px;
-    line-height: 1.6;
-}
+window.addEventListener('scroll', handleScroll);
+handleScroll();  // Check immediately on page load to show any already visible elements
 
-/* Header */
-header {
-    background-color:rgb(124, 59, 59);
-    padding: 20px 0;
-}
+// 5. Form Validation (for a sample form)
+const form = document.querySelector('#contact-form');  // Assume you have a form with id 'contact-form'
+const nameField = form.querySelector('#name');
+const emailField = form.querySelector('#email');
+const messageField = form.querySelector('#message');
 
-/* Section Styling */
-.content-section, .rehabilitation, .facility-overview, #officer-in-charge {
-    margin: 20px auto;
-    max-width: 1000px;
-    padding: 15px;
-}
-
-/* Image Gallery */
-.image-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.image-item {
-    flex: 1;
-    max-width: 200px;
-}
-
-.zoom-image {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.25s ease;
-}
-
-.zoom-image:hover {
-    transform: scale(1.1);
-}
-
-/* Zoom on hover for images */
-.zoom-image:hover {
-    transform: scale(1.1);
-}
-
-/* Officer Photo */
-#officer-photo img {
-    max-width: 300px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-/* For Mobile Devices */
-@media screen and (max-width: 768px) {
-    .image-gallery {
-        flex-direction: column;
-        align-items: center;
+form.addEventListener('submit', function (e) {
+    let isValid = true;
+    if (nameField.value.trim() === '') {
+        isValid = false;
+        alert('Please enter your name');
+    }
+    if (!/\S+@\S+\.\S+/.test(emailField.value.trim())) {
+        isValid = false;
+        alert('Please enter a valid email address');
+    }
+    if (messageField.value.trim() === '') {
+        isValid = false;
+        alert('Please enter your message');
     }
 
-    .image-item {
-        max-width: 90%;
+    if (!isValid) {
+        e.preventDefault(); // Prevent form submission if invalid
     }
-}
+});
 
-JavaScript Code (script.js):
+// Optional: Back-to-top button
+const backToTopBtn = document.createElement('button');
+backToTopBtn.innerText = 'Back to Top';
+backToTopBtn.classList.add('back-to-top');
+document.body.appendChild(backToTopBtn);
 
-// Zoom functionality for images
-document.querySelectorAll('.zoom-image').forEach(image => {
-    image.addEventListener('mouseover', function () {
-        this.style.transform = 'scale(1.2)';
-    });
-    image.addEventListener('mouseout', function () {
-        this.style.transform = 'scale(1)';
-    });
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
 });
