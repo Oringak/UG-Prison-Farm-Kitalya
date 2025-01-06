@@ -173,7 +173,7 @@ p {
 
 .caption {
     padding: 10px;
-    background-color: #800000; /* Maroon */
+    background-color: #5e3838; /* Maroon */
     color: white;
     font-size: 1.1em;
     text-align: center;
@@ -267,5 +267,52 @@ p {
 @media (max-width: 768px) {
     .officer-photo-container img {
         width: 150px; /* Resize the image for smaller screens */
+    }
+}
+/* Styles for the Rehabilitation Section */
+.rehabilitation {
+    background-color: #f9f9f9; /* Light gray background */
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    max-width: 900px; /* Limit the section width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better appearance */
+    font-family: Arial, sans-serif;
+}
+
+.rehabilitation h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #2c3e50; /* Dark blue-gray for the title */
+    margin-bottom: 20px;
+}
+
+.rehabilitation ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    margin: 0;
+}
+
+.rehabilitation ul li {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #333; /* Dark gray for readability */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .rehabilitation {
+        padding: 15px;
+        max-width: 100%; /* Full width for smaller devices */
+    }
+
+    .rehabilitation h2 {
+        font-size: 1.8em;
+    }
+
+    .rehabilitation ul li {
+        font-size: 1em;
+        line-height: 1.6;
     }
 }
