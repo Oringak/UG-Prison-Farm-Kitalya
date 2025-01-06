@@ -16,15 +16,4 @@ document.addEventListener('DOMContentLoaded', function () {
             caption.style.display = (caption.style.display === 'none' || caption.style.display === '') ? 'block' : 'none';
         });
     });
-
-    // Collapsible sections functionality
-    const sections = document.querySelectorAll('.content-section');
-
-    sections.forEach(section => {
-        const header = section.querySelector('h2');
-        header.addEventListener('click', function() {
-            const content = this.nextElementSibling;
-            content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'block' : 'none';
-        });
-    });
 });

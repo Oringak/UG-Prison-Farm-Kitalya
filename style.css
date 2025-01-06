@@ -121,40 +121,15 @@ p {
     margin-bottom: 20px;
     font-weight: bold; /* Bold headings */
 }
-
-/* Facility Overview */
+/* Facility Overview Section */
 .facility-overview {
-    background-color: #808080; /* Gray */
-    padding: 30px;
-    margin: 30px 0;
+    background-color: #f9f9f9;
+    padding: 20px;
     border-radius: 8px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.facility-overview h2 {
-    font-size: 2em;
-    color: #ffffff;
-    font-weight: bold; /* Bold headings */
 }
 
 .facility-overview p {
-    font-size: 1.2em;
-    color: #ffffff;
-    line-height: 1.8;
-}
-
-/* Image Gallery */
-.image-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.image-item {
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    background-color: #ffffff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
 }
