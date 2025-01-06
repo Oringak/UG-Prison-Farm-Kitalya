@@ -24,9 +24,35 @@ function toggleSection(sectionId) {
     if (section) {
         const isHidden = section.style.display === "none";
         section.style.display = isHidden ? "block" : "none";
+    }// JavaScript to Highlight the Section on Page Load
+document.addEventListener('DOMContentLoaded', function () {
+    const rehabSection = document.querySelector('.rehabilitation');
+    if (rehabSection) {
+        rehabSection.style.transition = 'background-color 1s ease';
+        rehabSection.style.backgroundColor = '#eaf4fc'; // Temporary light blue highlight
+
+        // Revert to original background after 2 seconds
+        setTimeout(() => {
+            rehabSection.style.backgroundColor = '#f9f9f9';
+        }, 2000);
+    }
+});
+
+// JavaScript to Scroll to the Section When a Button is Clicked
+function scrollToRehabilitation() {
+    const rehabSection = document.querySelector('.rehabilitation');
+    if (rehabSection) {
+        rehabSection.scrollIntoView({ behavior: 'smooth' });
     }
 }
 
+How to Use:
+
+    HTML: Add a button to scroll to the section (optional):
+
+<button onclick="scrollToRehabilitation()" style="display: block; margin: 20px auto; padding: 10px 20px; font-size: 1em;">
+    Go to Rehabilitation Section
+</button>
 // Add toggle buttons for each section dynamically
 function addToggleButtons() {
     const sections = document.querySelectorAll(".content-section, .rehabilitation, .professionalism, .facility-overview");
