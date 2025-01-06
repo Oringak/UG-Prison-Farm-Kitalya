@@ -121,6 +121,71 @@ p {
     margin-bottom: 20px;
     font-weight: bold; /* Bold headings */
 }
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* Styling for Image Gallery */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.image-item {
+    text-align: center;
+    width: 23%;
+    margin: 10px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Styling for description text */
+.description {
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+    background-color: #f1f1f1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+/* Image hover effect */
+.image-item:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
 /* Facility Overview Section */
 .facility-overview {
     background-color: #f9f9f9;
