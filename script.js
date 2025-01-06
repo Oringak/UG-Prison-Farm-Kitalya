@@ -99,3 +99,22 @@ window.addEventListener('scroll', () => {
         backToTopBtn.style.display = 'none';
     }
 });
+// 1. Facility Overview Icons Click-to-Reveal More Information
+const facilityIcons = document.querySelectorAll('.icon-item');
+const moreInfoSection = document.getElementById('more-info');
+const closeButton = document.getElementById('close-more-info');
+
+// Function to show more details
+facilityIcons.forEach(icon => {
+    icon.addEventListener('click', function () {
+        moreInfoSection.style.display = 'block'; // Show the more info section
+        // You can customize the content based on which icon was clicked
+        const title = icon.querySelector('.icon-title').textContent;
+        moreInfoSection.querySelector('p').textContent = `More details about ${title}...`;
+    });
+});
+
+// Close the more info section
+closeButton.addEventListener('click', function () {
+    moreInfoSection.style.display = 'none';
+});
