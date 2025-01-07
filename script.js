@@ -1,30 +1,40 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Functionality to handle image hover effect and caption toggle
-    const imageItems = document.querySelectorAll('.image-item img');
-    
-    imageItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.1)';
-        });
+// JavaScript for Interactive Features
 
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
-
-        item.addEventListener('click', function() {
-            const caption = this.nextElementSibling;
-            caption.style.display = (caption.style.display === 'none' || caption.style.display === '') ? 'block' : 'none';
-        });
+// Smooth Scrolling for Navigation Links
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
     });
 });
-// Optional: Hover effect for the Officer in Charge section
-document.addEventListener("DOMContentLoaded", function() {
-    const officerSection = document.querySelector('.officer');
 
-    officerSection.addEventListener('mouseenter', function() {
-        officerSection.style.backgroundColor = '#e0f7fa';
+// Hero Section Text Fade-in Effect
+window.addEventListener('load', () => {
+    const heroText = document.querySelector('.hero h2');
+    if (heroText) {
+        heroText.style.opacity = 0;
+        heroText.style.transition = 'opacity 2s';
+        setTimeout(() => {
+            heroText.style.opacity = 1;
+        }, 500);
+    }
+});
+
+// Facility Overview Image Hover Effect
+const imageItems = document.querySelectorAll('.image-item');
+imageItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = 'scale(1.05)';
+        item.style.transition = 'transform 0.3s';
     });
-    officerSection.addEventListener('mouseleave', function() {
-        officerSection.style.backgroundColor = '#ffffff';
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'scale(1)';
     });
 });
