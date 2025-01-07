@@ -3,10 +3,15 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #003b5c, #800000);
+    background: linear-gradient(135deg, #800000, #003b5c); /* Maroon and Blue background */
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
 }
 
+/* Centering content */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -22,6 +27,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 header .logo img {
@@ -148,7 +154,7 @@ nav ul li a:hover {
 }
 
 .icon-box i {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #003b5c;
     margin-bottom: 10px;
 }
@@ -162,12 +168,6 @@ nav ul li a:hover {
     background-color: #003b5c;
     color: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.facility-overview .description {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #333;
 }
 
 /* Contact Section */
