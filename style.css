@@ -260,3 +260,12 @@ p {
         font-size: 1em;
     }
 }
+.logo-container {
+    text-align: center; /* Centers the logo */
+    margin-bottom: 20px; /* Adds spacing below the logo */
+}
+
+.department-logo {
+    max-width: 100px; /* Adjust the size of the logo */
+    height: auto; /* Maintains aspect ratio */
+}
