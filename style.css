@@ -3,12 +3,13 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #800000, #003b5c); /* Maroon and Blue background */
+    background: linear-gradient(135deg, #800000, #003b5c); /* Maroon and Blue gradient background */
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     min-height: 100vh;
+    align-items: center; /* Center the body content */
 }
 
 /* Centering content */
@@ -16,6 +17,7 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center; /* Center text inside container */
 }
 
 /* Header */
@@ -64,6 +66,7 @@ nav ul li a:hover {
     padding: 100px 0;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 
 .hero h1 {
