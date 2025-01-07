@@ -17,6 +17,10 @@ header {
     background-color: #003b5c;
     padding: 20px 0;
     color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 header .logo img {
@@ -54,6 +58,12 @@ nav ul li a:hover {
     color: #fff;
     padding: 100px 0;
     text-align: center;
+    position: relative;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 50px;
 }
 
 .hero h1 {
@@ -64,6 +74,21 @@ nav ul li a:hover {
 .hero p {
     font-size: 1.5rem;
     margin-top: 10px;
+}
+
+.btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #003b5c;
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #00aaff;
 }
 
 /* About Us Section */
@@ -139,6 +164,11 @@ nav ul li a:hover {
 
 .contact-us p {
     font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact-us i {
+    margin-right: 10px;
 }
 
 /* Footer */
