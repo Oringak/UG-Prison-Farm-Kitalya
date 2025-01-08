@@ -4,159 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UG Prison Farm Kitalya</title>
-    <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Inline CSS -->
     <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
+        /* Full height page */
+        html, body {
+            height: 100%;
             margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #acc29f, #bdb6b9);
-            color: #4b7de9;
+        }
+
+        body {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            min-height: 100vh;
-            align-items: center;
+            justify-content: space-between;
         }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
+
+        /* Header Section */
         header {
-            background: linear-gradient(to right, #003366, #800000);
             padding: 50px 0;
+            background: linear-gradient(to right, #003366, #800000);
             color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 100vh; /* Make header take full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
         }
-        .logo img {
-            max-width: 200px;
-            height: auto;
-        }
-        .logo p {
-            font-size: 3em;
-            font-weight: bold;
-            margin-top: 20px;
-        }
+
+        /* Grid layout for icons */
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             justify-items: center;
-            text-align: center;
             margin-top: 40px;
+            grid-auto-rows: minmax(100px, auto); /* Make rows flexible */
         }
+
         .grid a {
             text-decoration: none;
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            height: 100%; /* Ensures the icons fill the available height */
         }
+
         .grid a i {
-            font-size: 5em; /* Increased the icon size */
-        }
-        .grid a p {
-            font-size: 1.5em; /* Increased the font size of the text for better readability */
-            font-weight: bold;
-        }
-        .facility-overview {
-            text-align: center;
-            margin: 50px 0;
-        }
-        .facility-overview h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-        .facility-overview p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .image-item {
-            text-align: center;
-        }
-        .icon-box {
-            text-decoration: none;
-            color: #333;
-            display: block;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-        .icon-box i {
-            font-size: 3em;
+            font-size: 10em; /* Large icon size */
+            transition: transform 0.3s ease-in-out;
             margin-bottom: 10px;
-            color: #007BFF;
-            transition: transform 0.3s ease, color 0.3s ease;
         }
-        .icon-box:hover i {
-            transform: scale(1.2);
-            color: #f1f4f7;
-        }
-        .icon-box:hover p {
-            color: #f098ae;
-        }
-        .icon-box p {
-            font-size: 1.1em;
-            margin: 0;
+
+        .grid a p {
+            font-size: 2em; /* Increase the text size */
             font-weight: bold;
         }
+
+        .grid a:hover i {
+            transform: scale(1.3); /* Scale up the icon on hover */
+        }
+
+        .grid a:hover p {
+            color: #f098ae; /* Change text color on hover */
+        }
+
+        /* Officer in Charge Section */
+        #officer-in-charge {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            overflow: visible;
+        }
+
+        #officer-in-charge img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 50%;
+        }
+
+        #officer-in-charge h2 {
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+
+        #officer-in-charge h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        #officer-in-charge p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        #officer-in-charge a {
+            font-size: 1.5em;
+            color: #003366;
+            text-decoration: none;
+        }
+
+        /* Facility Overview Section */
+        .facility-overview {
+            background-color: #f4f4f4;
+            padding: 50px 0;
+        }
+
+        .facility-overview h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .facility-overview .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .facility-overview .image-gallery .image-item a {
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.5em;
+            color: #003366;
+        }
+
+        .facility-overview .image-gallery .image-item i {
+            font-size: 4em;
+            margin-bottom: 10px;
+            color: #800000;
+        }
+
+        /* Footer Section */
         footer {
             background-color: #003366;
             color: white;
-            padding: 20px;
+            padding: 20px 0;
             text-align: center;
-            font-size: 1em;
         }
+
+        footer p {
+            margin: 10px 0;
+        }
+
         footer a {
-            color: #00aaff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        /* Officer Section */
-        #officer-in-charge {
-            background: linear-gradient(to bottom, #003366, #800000);
-            color: white;
-            padding: 15px;
-            text-align: center;
-            margin-top: 20px;
-        }
-        #officer-in-charge img {
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            border: 3px solid white;
-            cursor: zoom-in;
-        }
-        #officer-in-charge h2,
-        #officer-in-charge h3 {
-            font-size: 1.8em;
-            font-weight: bold;
-            margin-top: 8px;
-        }
-        #officer-in-charge p {
-            font-size: 1em;
-            margin-top: 10px;
-            line-height: 1.4;
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        #officer-in-charge a {
-            color: #00aaff;
-            font-weight: bold;
-            font-size: 0.9em;
+            color: #f098ae;
             text-decoration: none;
         }
+
     </style>
-    <!-- External JS -->
-    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -190,8 +189,8 @@
 
 <!-- Officer in Charge Section -->
 <section id="officer-in-charge">
-    <div style="max-width: 700px; margin: auto; text-align: center; overflow: visible;">
-        <a href="images/bye1.jpeg" target="_blank" style="display: inline-block;">
+    <div>
+        <a href="images/bye1.jpeg" target="_blank">
             <img src="images/bye1.jpeg" alt="Mr. Andrew Kenneth Byekwaso">
         </a>
         <h2>Mr. Andrew Kenneth Byekwaso</h2>
