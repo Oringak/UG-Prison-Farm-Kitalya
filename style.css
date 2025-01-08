@@ -81,7 +81,7 @@ nav ul li a:hover {
 .facility-overview {
     padding: 50px 0;
     text-align: center;
-    background-color: #fff;
+    background-color: #d13a79;
 }
 
 .facility-overview .image-gallery {
@@ -92,11 +92,11 @@ nav ul li a:hover {
 }
 
 .image-item {
-    background-color: #003b5c;
+    background-color: #35d626;
     padding: 20px;
     width: 250px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(161, 151, 151, 0.1);
 }
 
 .icon-box {
