@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Inline CSS -->
     <style>
-        /* Inline CSS added for additional styles */
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
@@ -19,7 +18,6 @@
             flex-direction: column;
             justify-content: flex-start;
             min-height: 100vh;
-            align-items: center;
         }
         .container {
             width: 90%;
@@ -27,44 +25,82 @@
             margin: 0 auto;
             text-align: center;
         }
-        #officer-in-charge img {
+        header {
+            background: linear-gradient(to right, #003366, #800000);
+            padding: 50px 0;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .logo img {
+            max-width: 200px;
+            height: auto;
+        }
+        .logo p {
+            font-size: 3em;
+            font-weight: bold;
             margin-top: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-items: center;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .grid a {
+            text-decoration: none;
+            color: white;
+        }
+        .grid a i {
+            font-size: 3em;
+        }
+        .grid a p {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1em;
+        }
+        footer a {
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
     <!-- External JS -->
     <script src="script.js" defer></script>
 </head>
 <body>
-  
-Updated Code:
-html
-Copy code
-<!-- Header Section -->
-<header style="background: linear-gradient(to right, #003366, #800000); padding: 20px 0; color: white; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
-    <div class="container">
-        <!-- Logo -->
-        <div class="logo" style="text-align: center; margin-bottom: 20px;">
-            <img src="images/upslogo-removebg-preview.png" alt="UG Prison Farm Kitalya" style="max-width: 150px; height: auto;">
-            <p style="font-size: 1.5em; font-weight: bold; margin-top: 10px;">UG Prison Farm Kitalya</p>
-        </div>
 
-        <!-- Navigation Icons in Grid -->
-        <div class="grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; justify-items: center; text-align: center; margin-top: 20px;">
-            <a href="#home" style="text-decoration: none; color: white;">
-                <i class="fas fa-home" style="font-size: 2em;"></i>
-                <p style="font-size: 1em; font-weight: bold;">Home</p>
+<!-- Header Section -->
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="images/upslogo-removebg-preview.png" alt="UG Prison Farm Kitalya">
+            <p>UG Prison Farm Kitalya</p>
+        </div>
+        <div class="grid">
+            <a href="#home">
+                <i class="fas fa-home"></i>
+                <p>Home</p>
             </a>
-            <a href="#overview" style="text-decoration: none; color: white;">
-                <i class="fas fa-building" style="font-size: 2em;"></i>
-                <p style="font-size: 1em; font-weight: bold;">Facility Overview</p>
+            <a href="#overview">
+                <i class="fas fa-building"></i>
+                <p>Facility Overview</p>
             </a>
-            <a href="#about" style="text-decoration: none; color: white;">
-                <i class="fas fa-info-circle" style="font-size: 2em;"></i>
-                <p style="font-size: 1em; font-weight: bold;">About Us</p>
+            <a href="#about">
+                <i class="fas fa-info-circle"></i>
+                <p>About Us</p>
             </a>
-            <a href="#contact" style="text-decoration: none; color: white;">
-                <i class="fas fa-phone-alt" style="font-size: 2em;"></i>
-                <p style="font-size: 1em; font-weight: bold;">Contact</p>
+            <a href="#contact">
+                <i class="fas fa-phone-alt"></i>
+                <p>Contact</p>
             </a>
         </div>
     </div>
@@ -87,167 +123,15 @@ Copy code
 </section>
 
 <!-- Contact Section at the Bottom -->
-<footer id="contact" style="background-color: #003366; color: white; padding: 40px 20px; text-align: center;">
-    <h2 style="font-size: 1.8em; font-weight: bold; margin-bottom: 20px;">Contact Us</h2>
-    <p style="font-size: 1.2em; margin-bottom: 10px;">
-        <a href="tel:+256787428252" style="color: #00aaff; text-decoration: none; font-weight: bold;">+256 787 428 252</a>
-    </p>
-    <p style="font-size: 1.2em; margin-bottom: 20px;">
-        <a href="mailto:info@ugandaprisons.go.ug" style="color: #00aaff; text-decoration: none; font-weight: bold;">info@ugandaprisons.go.ug</a>
-    </p>
-    <p style="font-size: 1em;">We look forward to hearing from you!</p>
-</footer>
-<!-- Officer in charge -->
-<section id="officer-in-charge" style="background: linear-gradient(to bottom, #003366, #800000); color: white; padding: 15px; text-align: center; margin-top: 20px;">
-    <div style="max-width: 700px; margin: auto; text-align: center; overflow: visible;">
-        <!-- Officer's Image (Clickable and Zoomable) -->
-        <div style="margin-bottom: 15px;">
-            <a href="images/bye1.jpeg" target="_blank" style="display: inline-block;">
-                <img src="images/bye1.jpeg" alt="Mr. Andrew Kenneth Byekwaso" style="border-radius: 50%; width: 120px; height: 120px; border: 3px solid white; cursor: zoom-in;">
-            </a>
-        </div>
-
-        <!-- Officer's Name and Rank -->
-        <h2 style="font-size: 1.8em; font-weight: bold; margin-top: 8px;">Mr. Andrew Kenneth Byekwaso</h2>
-        <h3 style="font-size: 1.3em; font-weight: bold; margin-top: 5px;">Superintendent of Prisons (S.P.)</h3>
-
-        <!-- Officer's Introductory Notes -->
-        <div style="font-size: 1em; margin-top: 10px; line-height: 1.4; text-align: left; max-width: 800px; margin: 0 auto;">
-            <p>
-                <strong>Introduction:</strong> Mr. Andrew Kenneth Byekwaso is a consummate leader whose strategic foresight and exceptional problem-solving acumen have earned him the respect of both his colleagues and the broader community. 
-                <span class="read-more" style="display: none;">
-                    His leadership is characterized by a methodical approach to complex challenges, consistently employing analytical rigor and innovative thinking to enhance the operational efficiency of the prison facility. By fostering a culture of continuous improvement, Mr. Byekwaso has successfully integrated modern technologies and systems that not only bolster security but also optimize agricultural production, making the farm an exemplary model of self-sustainability. His decision-making processes are rooted in a balanced consideration of both short-term operational needs and long-term vision, ensuring that each challenge is met with a solution that is both pragmatic and forward-thinking.
-                </span>
-            </p>
-            <p>
-                <strong>Relationships and Passion:</strong> Beyond his technical expertise, Mr. Byekwaso has cultivated a harmonious and highly productive working environment through his unwavering commitment to nurturing positive relationships with his staff. 
-                <span class="read-more" style="display: none;">
-                    He recognizes that effective leadership hinges on empowering individuals, and as such, he emphasizes transparency, open communication, and professional development. This inclusive management style has fostered a collaborative atmosphere where staff feel valued and motivated to contribute to the facility's success. His deep passion for the Uganda Prisons Service is evident in his tireless dedication to its mission, and his genuine love for the department drives him to continuously seek innovative ways to elevate the work of his team, instilling a sense of pride and purpose across all levels of operation.
-                </span>
-            </p>
-
-            <!-- Read More Option -->
-            <a href="javascript:void(0);" onclick="toggleReadMore()" style="color: #00aaff; font-weight: bold; font-size: 0.9em; text-decoration: none;">Read More</a>
-        </div>
-    </div>
-</section>
-
-<script>
-    // Function to toggle the display of the "Read More" content
-    function toggleReadMore() {
-        const readMoreElements = document.querySelectorAll('.read-more');
-        const link = document.querySelector('a');
-
-        readMoreElements.forEach((element) => {
-            if (element.style.display === 'none') {
-                element.style.display = 'inline';
-                link.textContent = 'Read Less';
-            } else {
-                element.style.display = 'none';
-                link.textContent = 'Read More';
-            }
-        });
-    }
-</script>
-
-   <!-- Facility Overview Section -->
-<section id="overview" class="facility-overview">
+<footer>
     <div class="container">
-        <h2>Facility Overview</h2>
-        <p>Discover our innovative approach to rehabilitation through images of our facilities.</p>
-        <div class="image-gallery">
-            <div class="image-item">
-                <a href="#main-entrance" class="icon-box">
-                    <i class="fas fa-door-open"></i>
-                    <p>Main Entrance</p>
-                </a>
-            </div>
-            <div class="image-item">
-                <a href="#rehab-area" class="icon-box">
-                    <i class="fas fa-users"></i>
-                    <p>Rehabilitation Area</p>
-                </a>
-            </div>
-            <div class="image-item">
-                <a href="#agriculture" class="icon-box">
-                    <i class="fas fa-seedling"></i>
-                    <p>Agricultural Training</p>
-                </a>
-            </div>
-            <div class="image-item">
-                <a href="#community" class="icon-box">
-                    <i class="fas fa-handshake"></i>
-                    <p>Community Service</p>
-                </a>
-            </div>
-        </div>
+        <p>&copy; 2025 UG Prison Farm Kitalya. All Rights Reserved.</p>
+        <p>
+            <a href="tel:+256787428252">+256 787 428 252</a> | 
+            <a href="mailto:info@ugandaprisons.go.ug">info@ugandaprisons.go.ug</a>
+        </p>
     </div>
-</section>
+</footer>
 
-<!-- CSS for Grid and Interactivity -->
-<style>
-    .facility-overview {
-        text-align: center;
-        margin: 50px 0;
-    }
-
-    .facility-overview h2 {
-        font-size: 2em;
-        margin-bottom: 15px;
-    }
-
-    .facility-overview p {
-        font-size: 1.2em;
-        margin-bottom: 30px;
-    }
-
-    .image-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 20px;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .image-item {
-        text-align: center;
-    }
-
-    .icon-box {
-        text-decoration: none;
-        color: #333;
-        display: block;
-        transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    .icon-box i {
-        font-size: 3em;
-        margin-bottom: 10px;
-        color: #007BFF;
-        transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    .icon-box:hover i {
-        transform: scale(1.2);
-        color: #f1f4f7;
-    }
-
-    .icon-box:hover p {
-        color: #f098ae;
-    }
-
-    .icon-box p {
-        font-size: 1.1em;
-        margin: 0;
-        font-weight: bold;
-    }
-</style>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 UG Prison Farm Kitalya. All Rights Reserved.</p>
-        </div>
-    </footer>
 </body>
 </html>
