@@ -60,19 +60,50 @@
             <h2 style="font-size: 2em; font-weight: bold;">Mr. Andrew Kenneth Byekwaso</h2>
             <h3 style="font-size: 1.5em; font-weight: bold;">Superintendent of Prisons (S.P)</h3>
 
-            <!-- Officer's Introductory Notes (Paragraph List) -->
-            <p style="font-size: 1.2em; margin-top: 15px; line-height: 1.6; text-align: left; max-width: 900px; margin: 0 auto;">
-                Here's an engaging and professional introductory note for the Officer in Charge:
-            </p>
-            <ul style="font-size: 1.2em; line-height: 1.6; text-align: left; max-width: 900px; margin: 20px auto;">
-                <li><strong>Meet the Officer in Charge: </strong> Mr. Andrew Kenneth Byekwaso</li>
-                <li><strong>Leadership: </strong> At the helm of UG Prison Farm Kitalya, we proudly introduce Mr. Andrew Kenneth Byekwaso, the Superintendent of Prisons (S.P.).</li>
-                <li><strong>Career Excellence: </strong> With a distinguished career in the Uganda Prisons Service, Mr. Byekwaso exemplifies unwavering dedication, visionary leadership, and a strong commitment to the rehabilitation and well-being of inmates.</li>
-                <li><strong>Facility Management: </strong> His leadership at Kitalya is marked by his focus on operational excellence, security, and agricultural development, making the facility one of the most recognized and progressive in the region.</li>
-                <li><strong>Integrity and Compassion: </strong> A man of integrity and compassion, Mr. Byekwaso is driven by the belief that every individual deserves a second chance and is deeply committed to the reformative process within the Uganda Prisons Service.</li>
-            </ul>
-        </div>
-    </section>
+            <section id="officer-in-charge" style="background: linear-gradient(to bottom, #003366, #800000); color: white; padding: 20px; text-align: center; margin-top: 20px;">
+                <div style="max-width: 800px; margin: auto; text-align: left; overflow: visible;">
+                    <!-- Officer's Image -->
+                    <div style="margin-bottom: 20px;">
+                        <img src="images/bye1.jpeg" alt="Mr. Andrew Kenneth Byekwaso" style="border-radius: 50%; width: 150px; height: 150px; border: 4px solid white;">
+                    </div>
+                    
+                    <!-- Officer's Name and Rank -->
+                    <h2 style="font-size: 2em; font-weight: bold; margin-top: 10px;">Mr. Andrew Kenneth Byekwaso</h2>
+                    <h3 style="font-size: 1.5em; font-weight: bold;">Superintendent of Prisons (S.P.)</h3>
+                    
+                    <!-- Officer's Introductory Notes (Paragraph List) -->
+                    <div style="font-size: 1.2em; margin-top: 15px; line-height: 1.6; text-align: left; max-width: 900px; margin: 0 auto;">
+                        <p><strong>Leadership Excellence:</strong> Mr. Andrew Kenneth Byekwaso, the Superintendent of Prisons (S.P.) at UG Prison Farm Kitalya, is a consummate leader whose strategic foresight and exceptional problem-solving acumen have earned him the respect of both his colleagues and the broader community. His leadership is characterized by a methodical approach to complex challenges, consistently employing analytical rigor and innovative thinking to enhance the operational efficiency of the prison facility.</p>
+            
+                        <p><strong>Innovative Leadership:</strong> By fostering a culture of continuous improvement, Mr. Byekwaso has successfully integrated modern technologies and systems that not only bolster security but also optimize agricultural production, making the farm an exemplary model of self-sustainability. His decision-making processes are rooted in a balanced consideration of both short-term operational needs and long-term vision, ensuring that each challenge is met with a solution that is both pragmatic and forward-thinking.</p>
+            
+                        <!-- Read More Option -->
+                        <p class="read-more" style="display: none;">
+                            <strong>Building Strong Relationships:</strong> Beyond his technical expertise, Mr. Byekwaso has cultivated a harmonious and highly productive working environment through his unwavering commitment to nurturing positive relationships with his staff. He recognizes that effective leadership hinges on empowering individuals, and as such, he emphasizes transparency, open communication, and professional development. This inclusive management style has fostered a collaborative atmosphere where staff feel valued and motivated to contribute to the facility's success.
+            
+                            <strong>Passion for the Department:</strong> His deep passion for the Uganda Prisons Service is evident in his tireless dedication to its mission, and his genuine love for the department drives him to continuously seek innovative ways to elevate the work of his team, instilling a sense of pride and purpose across all levels of operation.
+                        </p>
+            
+                        <a href="javascript:void(0);" onclick="toggleReadMore()" style="color: #00aaff; font-weight: bold; text-decoration: none;">Read More</a>
+                    </div>
+                </div>
+            </section>
+            
+            <script>
+                // Function to toggle the display of the "Read More" content
+                function toggleReadMore() {
+                    const readMore = document.querySelector('.read-more');
+                    const link = document.querySelector('a');
+            
+                    if (readMore.style.display === 'none') {
+                        readMore.style.display = 'block';
+                        link.textContent = 'Read Less';
+                    } else {
+                        readMore.style.display = 'none';
+                        link.textContent = 'Read More';
+                    }
+                }
+            </script>
 
     <!-- Facility Overview Section -->
     <section id="overview" class="facility-overview">
