@@ -105,39 +105,98 @@
     }
 </script>
 
-    <!-- Facility Overview Section -->
-    <section id="overview" class="facility-overview">
-        <div class="container">
-            <h2>Facility Overview</h2>
-            <p>Discover our innovative approach to rehabilitation through images of our facilities.</p>
-            <div class="image-gallery">
-                <div class="image-item">
-                    <a href="#main-entrance" class="icon-box">
-                        <i class="fas fa-door-open"></i>
-                        <p>Main Entrance</p>
-                    </a>
-                </div>
-                <div class="image-item">
-                    <a href="#rehab-area" class="icon-box">
-                        <i class="fas fa-users"></i>
-                        <p>Rehabilitation Area</p>
-                    </a>
-                </div>
-                <div class="image-item">
-                    <a href="#agriculture" class="icon-box">
-                        <i class="fas fa-seedling"></i>
-                        <p>Agricultural Training</p>
-                    </a>
-                </div>
-                <div class="image-item">
-                    <a href="#community" class="icon-box">
-                        <i class="fas fa-handshake"></i>
-                        <p>Community Service</p>
-                    </a>
-                </div>
+   <!-- Facility Overview Section -->
+<section id="overview" class="facility-overview">
+    <div class="container">
+        <h2>Facility Overview</h2>
+        <p>Discover our innovative approach to rehabilitation through images of our facilities.</p>
+        <div class="image-gallery">
+            <div class="image-item">
+                <a href="#main-entrance" class="icon-box">
+                    <i class="fas fa-door-open"></i>
+                    <p>Main Entrance</p>
+                </a>
+            </div>
+            <div class="image-item">
+                <a href="#rehab-area" class="icon-box">
+                    <i class="fas fa-users"></i>
+                    <p>Rehabilitation Area</p>
+                </a>
+            </div>
+            <div class="image-item">
+                <a href="#agriculture" class="icon-box">
+                    <i class="fas fa-seedling"></i>
+                    <p>Agricultural Training</p>
+                </a>
+            </div>
+            <div class="image-item">
+                <a href="#community" class="icon-box">
+                    <i class="fas fa-handshake"></i>
+                    <p>Community Service</p>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- CSS for Grid and Interactivity -->
+<style>
+    .facility-overview {
+        text-align: center;
+        margin: 50px 0;
+    }
+
+    .facility-overview h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .facility-overview p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .image-item {
+        text-align: center;
+    }
+
+    .icon-box {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .icon-box i {
+        font-size: 3em;
+        margin-bottom: 10px;
+        color: #007BFF;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .icon-box:hover i {
+        transform: scale(1.2);
+        color: #0056b3;
+    }
+
+    .icon-box:hover p {
+        color: #0056b3;
+    }
+
+    .icon-box p {
+        font-size: 1.1em;
+        margin: 0;
+        font-weight: bold;
+    }
+</style>
 
     <!-- Footer -->
     <footer>
