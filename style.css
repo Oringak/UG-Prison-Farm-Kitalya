@@ -122,4 +122,41 @@ nav ul li a:hover {
     background-color: #ffdf80; /* Interactive hover color for yellow theme */
     color: #000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}/* Facility Overview Section */
+.facility-overview {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+}
+
+.facility-overview h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.facility-overview p {
+    text-align: center; /* Centers the text */
+    color: #003366; /* Blue font color */
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.facility-overview .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.facility-overview .image-gallery .image-item a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5em;
+    color: #003366;
+}
+
+.facility-overview .image-gallery .image-item i {
+    font-size: 4em;
+    margin-bottom: 10px;
+    color: #800000;
 }
