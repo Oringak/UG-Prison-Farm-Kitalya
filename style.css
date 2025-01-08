@@ -1,0 +1,122 @@
+/* styles.css file */
+
+/* Global Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #800000, #003b5c);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Header Styles */
+header {
+    background-color: #b9a23a;
+    padding: 20px 0;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(146, 33, 33, 0.2);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: #00aaff;
+}
+
+/* Officer Section */
+#officer-in-charge {
+    background: linear-gradient(to bottom, #003366, #800000);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#officer-in-charge img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 4px solid white;
+    margin-bottom: 20px;
+}
+
+#officer-in-charge h2, #officer-in-charge h3 {
+    font-weight: bold;
+}
+
+/* Facility Overview Section */
+.facility-overview {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.facility-overview .image-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.image-item {
+    background-color: #003b5c;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon-box {
+    text-decoration: none;
+    color: #998e8e;
+    text-align: center;
+}
+
+.icon-box i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.icon-box p {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.icon-box:hover {
+    background-color: #00aaff;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
