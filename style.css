@@ -5,8 +5,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #800000, #003b5c);
-    color: #fff;
+    background-color: #fff9cc; /* Light Yellow Background */
+    color: #333; /* Updated text color for better contrast */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -58,8 +58,8 @@ nav ul li a:hover {
 
 /* Officer Section */
 #officer-in-charge {
-    background: linear-gradient(to bottom, #003366, #800000);
-    color: white;
+    background-color: #f3e2a9; /* Light complementary background for yellow theme */
+    color: #333; /* Updated text color for readability */
     padding: 20px;
     text-align: center;
     margin-top: 20px;
@@ -69,19 +69,20 @@ nav ul li a:hover {
     border-radius: 50%;
     width: 150px;
     height: 150px;
-    border: 4px solid white;
+    border: 4px solid #fff;
     margin-bottom: 20px;
 }
 
 #officer-in-charge h2, #officer-in-charge h3 {
     font-weight: bold;
+    color: #555; /* Neutral heading color */
 }
 
 /* Facility Overview Section */
 .facility-overview {
     padding: 50px 0;
     text-align: center;
-    background-color: #d13a79;
+    background-color: #f9d776; /* Light yellow to match theme */
 }
 
 .facility-overview .image-gallery {
@@ -92,7 +93,7 @@ nav ul li a:hover {
 }
 
 .image-item {
-    background-color: #35d626;
+    background-color: #fff; /* White background for contrast */
     padding: 20px;
     width: 250px;
     border-radius: 8px;
@@ -101,22 +102,24 @@ nav ul li a:hover {
 
 .icon-box {
     text-decoration: none;
-    color: #998e8e;
+    color: #333; /* Text color adjusted for yellow theme */
     text-align: center;
 }
 
 .icon-box i {
     font-size: 3rem;
     margin-bottom: 10px;
+    color: #007BFF; /* Icon color */
 }
 
 .icon-box p {
     font-weight: 600;
     font-size: 1.1rem;
+    color: #333;
 }
 
 .icon-box:hover {
-    background-color: #00aaff;
-    color: #fff;
+    background-color: #ffdf80; /* Interactive hover color for yellow theme */
+    color: #000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
