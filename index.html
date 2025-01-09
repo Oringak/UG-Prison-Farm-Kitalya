@@ -4,71 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UG Prison Farm Kitalya</title>
-
-    <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Inline CSS -->
     <style>
-        /* Basic Styles */
-        body {
+        html, body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
 
-        /* Header Section */
         header {
+            padding: 50px 0;
             background: linear-gradient(to right, #003366, #800000);
             color: white;
             text-align: center;
-            padding: 50px 20px;
         }
 
-        header img {
-            width: 150px;
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-        }
-
-        header .grid {
+        .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            margin-top: 30px;
             justify-items: center;
+            margin-top: 20px;
         }
 
-        header .grid a {
+        .grid a {
+            text-decoration: none;
+            color: white;
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: white;
-            font-size: 1.2rem;
-            transition: transform 0.3s;
         }
 
-        header .grid a:hover {
-            transform: scale(1.1);
-        }
-
-        header .grid a i {
+        .grid a i {
             font-size: 3rem;
             margin-bottom: 10px;
         }
 
-        /* Footer Section */
-        footer {
-            background: #003366;
-            color: white;
+        .grid a p {
+            font-size: 1.2rem;
+        }
+
+        #officer-in-charge {
             text-align: center;
             padding: 20px;
         }
 
+        #officer-in-charge img {
+            max-width: 200px;
+            border-radius: 50%;
+        }
+
+        #officer-in-charge h2 {
+            font-size: 2rem;
+            margin-top: 10px;
+        }
+
+        #officer-in-charge h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        #officer-in-charge p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        #more-text {
+            display: none;
+        }
+
+        .facility-overview {
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px 10px;
+        }
+
+        .facility-overview h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .facility-overview p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .facility-overview .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .facility-overview .image-item i {
+            font-size: 2.5rem;
+            color: #800000;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p, footer a {
+            font-size: 0.9rem;
+            color: white;
+        }
+
         footer a {
-            color: #f098ae;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -100,34 +146,37 @@
 
 <!-- Officer in Charge Section -->
 <section id="officer-in-charge">
-    <div>
-        <img src="images/bye3.jpeg" alt="Mr. Andrew Kenneth Byekwaso">
-        <h2>Mr. Andrew Kenneth Byekwaso</h2>
-        <h3>Superintendent of Prisons (S.P.)</h3>
-        <p><strong>Introduction:</strong> Mr. Byekwaso is a leader whose strategic foresight and problem-solving skills have earned him respect.</p>
-        <div id="more-text" style="display: none;">
-            <p><strong>Achievements:</strong> Under his guidance, numerous initiatives have been successfully implemented.</p>
-            <p><strong>Vision:</strong> Mr. Byekwaso envisions a self-reliant institution that reforms lives.</p>
-        </div>
-        <span class="read-more-btn" onclick="toggleReadMore()">Read More</span>
-    </div>
+    <img src="images/bye3.jpeg" alt="Mr. Andrew Kenneth Byekwaso">
+    <h2>Mr. Andrew Kenneth Byekwaso</h2>
+    <h3>Superintendent of Prisons (S.P.)</h3>
+    <p>
+        <strong>Introduction:</strong>
+        Mr. Byekwaso is a leader whose strategic foresight and problem-solving skills have earned him respect. 
+        <span id="more-text">His leadership is marked by a methodical approach and focus on improving operations and enhancing agricultural production for self-sustainability. His vision is to create a self-reliant institution that reforms lives and contributes meaningfully to national development.</span>
+        <a href="javascript:void(0);" onclick="toggleReadMore()" id="read-more-btn">Read More</a>
+    </p>
 </section>
 
 <!-- Facility Overview Section -->
-<section id="overview">
+<section id="overview" class="facility-overview">
     <h2>Facility Overview</h2>
+    <p>Discover our innovative approach to rehabilitation through images of our facilities.</p>
     <div class="image-gallery">
-        <div>
-            <a href="#main-entrance">
-                <i class="fas fa-door-open"></i>
-                <p>Main Entrance</p>
-            </a>
+        <div class="image-item">
+            <i class="fas fa-door-open"></i>
+            <p>Main Entrance</p>
         </div>
-        <div>
-            <a href="#rehab-area">
-                <i class="fas fa-users"></i>
-                <p>Rehabilitation Area</p>
-            </a>
+        <div class="image-item">
+            <i class="fas fa-users"></i>
+            <p>Rehabilitation Area</p>
+        </div>
+        <div class="image-item">
+            <i class="fas fa-seedling"></i>
+            <p>Agricultural Training</p>
+        </div>
+        <div class="image-item">
+            <i class="fas fa-handshake"></i>
+            <p>Community Service</p>
         </div>
     </div>
 </section>
@@ -135,20 +184,20 @@
 <!-- Footer Section -->
 <footer>
     <p>&copy; 2025 UG Prison Farm Kitalya. All Rights Reserved.</p>
-    <p><a href="mailto:info@ugandaprisons.go.ug">info@ugandaprisons.go.ug</a></p>
+    <p>
+        <a href="tel:+256787428252">+256 787 428 252</a> | 
+        <a href="mailto:info@ugandaprisons.go.ug">info@ugandaprisons.go.ug</a>
+    </p>
 </footer>
 
-<!-- External JavaScript -->
-<script src="scripts.js"></script>
-
-<!-- Inline JavaScript -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script>
     function toggleReadMore() {
         const moreText = document.getElementById("more-text");
-        const readMoreBtn = document.querySelector(".read-more-btn");
+        const readMoreBtn = document.getElementById("read-more-btn");
 
         if (moreText.style.display === "none" || moreText.style.display === "") {
-            moreText.style.display = "block";
+            moreText.style.display = "inline";
             readMoreBtn.textContent = "Read Less";
         } else {
             moreText.style.display = "none";
@@ -157,6 +206,5 @@
     }
 </script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
