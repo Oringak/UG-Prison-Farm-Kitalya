@@ -137,12 +137,14 @@
             <i class="fas fa-building"></i>
             <p>Facility Overview</p>
         </a>
-        <a href="#about">
-            <i class="fas fa-info-circle"></i>
-            <p>About Us</p>
-            
-<!-- About Us Section -->
-<section id="about-us-content">
+      <!-- Main About Us Icon (initial visible section) -->
+<a href="#about" onclick="toggleAboutUs()">
+    <i class="fas fa-info-circle"></i>
+    <p>About Us</p>
+</a>
+
+<!-- Hidden Icons for Detailed Sections (Initially Hidden) -->
+<div id="about-us-content" style="display: none;">
     <h2>About Us</h2>
     <div class="grid">
         <!-- Icon for Prisons Act -->
@@ -175,7 +177,7 @@
 
     <div id="vision-mission" class="about-section">
         <h3>Vision and Mission</h3>
-        <p><strong>Vision:</strong> A centre of excellence in providing human rights based correctional services in Africa.<br>
+        <p><strong>Vision:</strong> A centre of excellence in providing human rights-based correctional services in Africa.<br>
         <strong>Mission:</strong> To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
     </div>
 
@@ -186,15 +188,15 @@
 
     <div id="core-values" class="about-section">
         <h3>Core Values</h3>
-        <p><strong>Professionalism:</strong>Weshall adhere to the professional codes of conduct, exhibit high degree of competence and best practices as prescribed for a given profession in the Public Service. 
-        <strong>Reliability:</strong>We shall be accountable, trustworthy, effective and efficient in conducting our work.<br>bit high degree of competence and best practices as prescribed for a given profession in the Public Service. <br>
-        <strong>Integrity:</strong>We shall uphold our ethical values, serve with hosnesty and maintain zero tolerance to corruption.<br>
-        <strong>Security:</strong>We shall at all times ensure safety and security of our clients, safety of pisons property. <br>
-        <strong>Oneness: </strong>We shall exhibit unity of purpose in all aspects of prisons work.<br>
-        <strong>Nationalistic:</strong>We shall be nationalistic in outlook, character and practices. <br>
-        <strong>Discipline:</strong>We shall always behave in a maaner that conforms with the rules and regulations and codes of conduct and ethics.</p>
+        <p><strong>Professionalism:</strong> We shall adhere to professional codes of conduct, exhibit a high degree of competence, and implement best practices.<br>
+        <strong>Reliability:</strong> We shall be accountable, trustworthy, effective, and efficient in conducting our work.<br>
+        <strong>Integrity:</strong> We shall uphold ethical values and maintain zero tolerance for corruption.<br>
+        <strong>Security:</strong> We shall ensure the safety and security of our clients and property at all times.<br>
+        <strong>Oneness:</strong> We shall exhibit unity of purpose in all aspects of our work.<br>
+        <strong>Nationalistic:</strong> We shall be nationalistic in outlook, character, and practice.<br>
+        <strong>Discipline:</strong> We shall adhere to rules, regulations, and codes of conduct and ethics.</p>
     </div>
-</section>
+</div>
 
 <!-- CSS for Styling -->
 <style>
@@ -263,7 +265,22 @@
     }
 </style>
 
-        </a>
+<!-- JavaScript for Toggling Content -->
+<script>
+    // Toggle the visibility of the About Us content
+    function toggleAboutUs() {
+        const aboutUsContent = document.getElementById('about-us-content');
+        aboutUsContent.style.display = aboutUsContent.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Toggle visibility of specific sections
+    function toggleSection(sectionId) {
+        const sections = document.querySelectorAll('.about-section');
+        sections.forEach(section => section.style.display = 'none'); // Hide all sections
+        const section = document.getElementById(sectionId);
+        section.style.display = 'block'; // Show the clicked section
+    }
+</script>
         <a href="#contact">
             <i class="fas fa-phone-alt"></i>
             <p>Contact</p>
