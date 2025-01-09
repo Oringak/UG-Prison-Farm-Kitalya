@@ -122,6 +122,47 @@
         footer a {
             text-decoration: none;
         }
+
+        /* Styles for About Us Section and Sub Icons */
+        #about {
+            margin-top: 40px;
+        }
+
+        #about .sub-icons {
+            display: none;
+            padding-left: 20px;
+        }
+
+        #about .sub-icons a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #003366;
+            border: 1px solid #003366;
+            margin: 10px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #about .sub-icons a:hover {
+            background-color: #003366;
+            color: white;
+        }
+
+        /* Full screen view for content */
+        .content-view {
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 20px auto;
+            display: none;
+        }
+
+        .content-view h2 {
+            color: #003366;
+        }
     </style>
 </head>
 <body>
@@ -150,16 +191,59 @@
     </div>
 </header>
 
+<!-- About Us Section -->
+<section id="about">
+    <a href="javascript:void(0);" onclick="toggleSubIcons()">About Us</a>
+    <div class="sub-icons" id="about-us-icons">
+        <a href="javascript:void(0);" onclick="showContent('prisons-act')">Prisons Act</a>
+        <a href="javascript:void(0);" onclick="showContent('vision-mission')">Vision and Mission</a>
+        <a href="javascript:void(0);" onclick="showContent('oc-statement')">Officer in Charge Statement</a>
+        <a href="javascript:void(0);" onclick="showContent('core-values')">Core Values</a>
+    </div>
+
+    <!-- Content Views -->
+    <div id="prisons-act" class="content-view">
+        <h2>Prisons Act</h2>
+        <a href="path/to/prisons-act.pdf" download>Download PDF</a>
+        <embed src="path/to/prisons-act.pdf" width="100%" height="600px">
+    </div>
+
+    <div id="vision-mission" class="content-view">
+        <h2>Vision and Mission</h2>
+        <p><strong>Vision:</strong> A centre of excellence in providing human rights-based correctional services in Africa.</p>
+        <p><strong>Mission:</strong> To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
+    </div>
+
+    <div id="oc-statement" class="content-view">
+        <h2>Officer in Charge Statement</h2>
+        <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners.</p>
+    </div>
+
+    <div id="core-values" class="content-view">
+        <h2>Core Values</h2>
+        <ol>
+            <li><strong>Professionalism:</strong> We shall adhere to the professional codes of conduct, exhibit a high degree of competence, and follow best practices as prescribed for a given profession in the Public Service.</li>
+            <li><strong>Reliability:</strong> We shall be accountable, trustworthy, effective, and efficient in conducting our work.</li>
+            <li><strong>Integrity:</strong> We shall uphold our ethical values, serve with honesty, and maintain zero tolerance for corruption.</li>
+            <li><strong>Security:</strong> We shall ensure the safety and security of our clients and the property of the prisons at all times.</li>
+            <li><strong>Oneness:</strong> We shall exhibit unity of purpose in all aspects of prison work.</li>
+            <li><strong>Nationalistic:</strong> We shall be nationalistic in outlook, character, and practices.</li>
+            <li><strong>Discipline:</strong> We shall always behave in a manner that conforms with the rules, regulations, codes of conduct, and ethics.</li>
+        </ol>
+    </div>
+</section>
+
 <!-- Officer in Charge Section -->
 <section id="officer-in-charge">
     <img src="images/bye3.jpeg" alt="Mr. Andrew Kenneth Byekwaso">
     <h2>Mr. Andrew Kenneth Byekwaso</h2>
     <h3>Superintendent of Prisons (S.P.)</h3>
-    <p> Mr. Andrew Kenneth Byekwaso is a consummate leader whose strategic foresight and exceptional problem-solving acumen have earned him the respect of both his colleagues and the broader community. 
-        <span id="more-text">His leadership is characterized by a methodical approach to complex challenges, consistently employing analytical rigor and innovative thinking to enhance the operational efficiency of the prison facility. By fostering a culture of continuous improvement, Mr. Byekwaso has successfully integrated modern technologies and systems that not only bolster security but also optimize agricultural production, making the farm an exemplary model of self-sustainability. His decision-making processes are rooted in a balanced consideration of both short-term operational needs and long-term vision, ensuring that each challenge is met with a solution that is both pragmatic and forward-thinking.Beyond his technical expertise, Mr. Byekwaso has cultivated a harmonious and highly productive working environment through his unwavering commitment to nurturing positive relationships with his staff. He recognizes that effective leadership hinges on empowering individuals, and as such, he emphasizes transparency, open communication, and professional development. This inclusive management style has fostered a collaborative atmosphere where staff feel valued and motivated to contribute to the facility's success. His deep passion for the Uganda Prisons Service is evident in his tireless dedication to its mission, and his genuine love for the department drives him to continuously seek innovative ways to elevate the work of his team, instilling a sense of pride and purpose across all levels of operation.</span>
+    <p>Mr. Andrew Kenneth Byekwaso is a consummate leader whose strategic foresight and exceptional problem-solving acumen have earned him the respect of both his colleagues and the broader community. 
+        <span id="more-text">His leadership is characterized by a methodical approach to complex challenges, consistently employing analytical rigor and innovative thinking to enhance the operational efficiency of the prison facility. By fostering a culture of continuous improvement, Mr. Byekwaso has successfully integrated modern technologies and systems that not only bolster security but also optimize agricultural production, making the farm an exemplary model of self-sustainability. His decision-making processes are rooted in a balanced consideration of both short-term operational needs and long-term vision, ensuring that each challenge is met with a solution that is both pragmatic and forward-thinking. Beyond his technical expertise, Mr. Byekwaso has cultivated a harmonious and highly productive working environment through his unwavering commitment to nurturing positive relationships with his staff. He recognizes that effective leadership hinges on empowering individuals, and as such, he emphasizes transparency, open communication, and professional development. This inclusive management style has fostered a collaborative atmosphere where staff feel valued and motivated to contribute to the facility's success. His deep passion for the Uganda Prisons Service is evident in his tireless dedication to its mission, and his genuine love for the department drives him to continuously seek innovative ways to elevate the work of his team, instilling a sense of pride and purpose across all levels of operation.</span>
         <a href="javascript:void(0);" onclick="toggleReadMore()" id="read-more-btn">Read More</a>
     </p>
 </section>
+
 <!-- Facility Overview Section -->
 <section id="overview" class="facility-overview">
     <h2>Facility View Icons</h2>
@@ -207,6 +291,24 @@
         } else {
             moreText.style.display = "none";
             readMoreBtn.textContent = "Read More";
+        }
+    }
+
+    function toggleSubIcons() {
+        const subIcons = document.getElementById('about-us-icons');
+        if (subIcons.style.display === "none" || subIcons.style.display === "") {
+            subIcons.style.display = "block";
+        } else {
+            subIcons.style.display = "none";
+        }
+    }
+
+    function showContent(id) {
+        const contentViews = document.querySelectorAll('.content-view');
+        contentViews.forEach(content => content.style.display = 'none');
+        const content = document.getElementById(id);
+        if (content) {
+            content.style.display = 'block';
         }
     }
 </script>
