@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,28 +65,46 @@
             margin-top: 10px;
         }
 
+        #officer-in-charge h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
         #officer-in-charge p {
             font-size: 1rem;
             margin: 10px 0;
         }
 
-        #inner-icons,
-        #content-section {
+        #more-text {
             display: none;
         }
 
-        #inner-icons {
+        .facility-overview {
             text-align: center;
-            padding: 20px;
-            background: #f4f4f4;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f4f4f4;
+            padding: 20px 10px;
         }
 
-        #content-section {
-            padding: 20px;
-            background-color: #f9f9f9;
-            min-height: 100vh;
-            text-align: left;
+        .facility-overview h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .facility-overview p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .facility-overview .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .facility-overview .image-item i {
+            font-size: 2.5rem;
+            color: #800000;
+            margin-bottom: 5px;
         }
 
         footer {
@@ -97,149 +114,102 @@
             padding: 10px 0;
         }
 
+        footer p, footer a {
+            font-size: 0.9rem;
+            color: white;
+        }
+
         footer a {
-            color: white;
             text-decoration: none;
-        }
-
-        .content-header {
-            display: flex;
-            justify-content: space-between;
-            background-color: #003366;
-            padding: 10px;
-        }
-
-        .content-header button {
-            background: #0055aa;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .content-header button:hover {
-            background: #0077cc;
-        }
-
-        .about-section {
-            display: none;
-            margin-top: 20px;
         }
     </style>
 </head>
-
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <img src="images/upslogo-removebg-preview.png" alt="UG Prison Farm Kitalya">
-        <h1>UG Prison Farm Kitalya</h1>
-        <div class="grid">
-            <a href="#home">
-                <i class="fas fa-home"></i>
-                <p>Home</p>
-            </a>
-            <a href="#overview">
-                <i class="fas fa-building"></i>
-                <p>Facility Overview</p>
-            </a>
-            <a href="javascript:void(0)" onclick="showInnerIcons()" id="about-us-icon">
-                <i class="fas fa-info-circle"></i>
-                <p>About Us</p>
-            </a>
-        </div>
-    </header>
-
-    <!-- Officer-in-Charge Section -->
-    <section id="officer-in-charge">
-        <img src="images/bye3.jpeg" alt="Mr. Andrew Kenneth Byekwaso">
-        <h2>Mr. Andrew Kenneth Byekwaso</h2>
-        <p>The Officer in Charge (OC) is responsible for maintaining order and discipline...</p>
-    </section>
-
-    <!-- Inner Icons Section -->
-    <div id="inner-icons">
-        <h2>About Us</h2>
-        <div class="grid">
-            <div onclick="showContent('prisons-act')">
-                <i class="fas fa-book"></i>
-                <p>Prisons Act</p>
-            </div>
-            <div onclick="showContent('vision-mission')">
-                <i class="fas fa-bullseye"></i>
-                <p>Vision and Mission</p>
-            </div>
-            <div onclick="showContent('oc-statement')">
-                <i class="fas fa-user-tie"></i>
-                <p>OC Statement</p>
-            </div>
-            <div onclick="showContent('core-values')">
-                <i class="fas fa-heart"></i>
-                <p>Core Values</p>
-            </div>
-        </div>
+<!-- Header Section -->
+<header>
+    <img src="images/upslogo-removebg-preview.png" alt="UG Prison Farm Kitalya">
+    <h1>UG Prison Farm Kitalya</h1>
+    <div class="grid">
+        <a href="#home">
+            <i class="fas fa-home"></i>
+            <p>Home</p>
+        </a>
+        <a href="#overview">
+            <i class="fas fa-building"></i>
+            <p>Facility Overview</p>
+        </a>
+        <a href="#about">
+            <i class="fas fa-info-circle"></i>
+            <p>About Us</p>
+        </a>
+        <a href="#contact">
+            <i class="fas fa-phone-alt"></i>
+            <p>Contact</p>
+        </a>
     </div>
+</header>
 
-    <!-- Content Section -->
-    <div id="content-section">
-        <div class="content-header">
-            <button onclick="goBack()">Back</button>
-            <button onclick="goHome()">Home</button>
-        </div>
-        <div id="prisons-act" class="about-section">
-            <h3>Prisons Act</h3>
-            <p>Details about the Prisons Act...</p>
-        </div>
-        <div id="vision-mission" class="about-section">
-            <h3>Vision and Mission</h3>
-            <p>Details about Vision and Mission...</p>
-        </div>
-        <div id="oc-statement" class="about-section">
-            <h3>OC Statement</h3>
-            <p>Details about OC Statement...</p>
-        </div>
-        <div id="core-values" class="about-section">
-            <h3>Core Values</h3>
-            <p>Details about Core Values...</p>
-        </div>
+<!-- Officer in Charge Section -->
+<section id="officer-in-charge">
+    <img src="images/bye3.jpeg" alt="Mr. Andrew Kenneth Byekwaso">
+    <h2>Mr. Andrew Kenneth Byekwaso</h2>
+    <h3>Superintendent of Prisons (S.P.)</h3>
+    <p> Mr. Andrew Kenneth Byekwaso is a consummate leader whose strategic foresight and exceptional problem-solving acumen have earned him the respect of both his colleagues and the broader community. 
+        <span id="more-text">His leadership is characterized by a methodical approach to complex challenges, consistently employing analytical rigor and innovative thinking to enhance the operational efficiency of the prison facility. By fostering a culture of continuous improvement, Mr. Byekwaso has successfully integrated modern technologies and systems that not only bolster security but also optimize agricultural production, making the farm an exemplary model of self-sustainability. His decision-making processes are rooted in a balanced consideration of both short-term operational needs and long-term vision, ensuring that each challenge is met with a solution that is both pragmatic and forward-thinking.Beyond his technical expertise, Mr. Byekwaso has cultivated a harmonious and highly productive working environment through his unwavering commitment to nurturing positive relationships with his staff. He recognizes that effective leadership hinges on empowering individuals, and as such, he emphasizes transparency, open communication, and professional development. This inclusive management style has fostered a collaborative atmosphere where staff feel valued and motivated to contribute to the facility's success. His deep passion for the Uganda Prisons Service is evident in his tireless dedication to its mission, and his genuine love for the department drives him to continuously seek innovative ways to elevate the work of his team, instilling a sense of pride and purpose across all levels of operation.</span>
+        <a href="javascript:void(0);" onclick="toggleReadMore()" id="read-more-btn">Read More</a>
+    </p>
+</section>
+<!-- Facility Overview Section -->
+<section id="overview" class="facility-overview">
+    <h2>Facility View Icons</h2>
+    <p style="text-align: center; margin: 0 auto; max-width: 600px;">
+        Discover our innovative approach to rehabilitation through images of our facilities.
+    </p>
+    <div class="image-gallery" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 20px; padding: 0 20px;">
+        <a href="#main-entrance" class="image-item" style="text-decoration: none; text-align: center; border: 2px solid #003366; padding: 20px; border-radius: 10px; transition: transform 0.3s;">
+            <i class="fas fa-door-open" style="font-size: 2.5rem; color: #003366;"></i>
+            <p style="color: #003366; font-weight: bold;">Main Entrance</p>
+        </a>
+        <a href="#rehabilitation-area" class="image-item" style="text-decoration: none; text-align: center; border: 2px solid #003366; padding: 20px; border-radius: 10px; transition: transform 0.3s;">
+            <i class="fas fa-users" style="font-size: 2.5rem; color: #003366;"></i>
+            <p style="color: #003366; font-weight: bold;">Rehabilitation Area</p>
+        </a>
+        <a href="#agricultural-training" class="image-item" style="text-decoration: none; text-align: center; border: 2px solid #003366; padding: 20px; border-radius: 10px; transition: transform 0.3s;">
+            <i class="fas fa-seedling" style="font-size: 2.5rem; color: #003366;"></i>
+            <p style="color: #003366; font-weight: bold;">Agricultural Training</p>
+        </a>
+        <a href="#community-service" class="image-item" style="text-decoration: none; text-align: center; border: 2px solid #003366; padding: 20px; border-radius: 10px; transition: transform 0.3s;">
+            <i class="fas fa-handshake" style="font-size: 2.5rem; color: #003366;"></i>
+            <p style="color: #003366; font-weight: bold;">Community Service</p>
+        </a>
     </div>
+</section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 UG Prison Farm Kitalya. All Rights Reserved.</p>
-        <p><a href="tel:+256787428252">+256 787 428 252</a> | <a href="mailto:info@ugandaprisons.go.ug">info@ugandaprisons.go.ug</a></p>
-    </footer>
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2025 UG Prison Farm Kitalya. All Rights Reserved.</p>
+    <p>
+        <a href="tel:+256787428252">+256 787 428 252</a> | 
+        <a href="mailto:info@ugandaprisons.go.ug">info@ugandaprisons.go.ug</a>
+    </p>
+</footer>
 
-    <script>
-        function showInnerIcons() {
-            document.getElementById("about-us-icon").style.display = "none";
-            document.getElementById("inner-icons").style.display = "block";
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+    function toggleReadMore() {
+        const moreText = document.getElementById("more-text");
+        const readMoreBtn = document.getElementById("read-more-btn");
+
+        if (moreText.style.display === "none" || moreText.style.display === "") {
+            moreText.style.display = "inline";
+            readMoreBtn.textContent = "Read Less";
+        } else {
+            moreText.style.display = "none";
+            readMoreBtn.textContent = "Read More";
         }
-
-        function showContent(sectionId) {
-            document.getElementById("inner-icons").style.display = "none";
-            document.getElementById("content-section").style.display = "block";
-
-            document.querySelectorAll(".about-section").forEach(section => {
-                section.style.display = "none";
-            });
-
-            document.getElementById(sectionId).style.display = "block";
-        }
-
-        function goBack() {
-            document.getElementById("content-section").style.display = "none";
-            document.getElementById("inner-icons").style.display = "block";
-        }
-
-        function goHome() {
-            document.getElementById("content-section").style.display = "none";
-            document.getElementById("inner-icons").style.display = "none";
-            document.getElementById("about-us-icon").style.display = "block";
-        }
-    </script>
+    }
+</script>
 
 </body>
-
 </html>
