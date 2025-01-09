@@ -137,7 +137,7 @@
             <i class="fas fa-building"></i>
             <p>Facility Overview</p>
         </a>
-      <!-- Main About Us Icon (initial visible section) -->
+     <!-- Main About Us Icon (initial visible section) -->
 <a href="#about" onclick="toggleAboutUs()">
     <i class="fas fa-info-circle"></i>
     <p>About Us</p>
@@ -168,34 +168,34 @@
             <p>Core Values</p>
         </div>
     </div>
+</div>
 
-    <!-- About Sections Content -->
-    <div id="prisons-act" class="about-section">
-        <h3>Prisons Act</h3>
-        <p>The Prisons Act of Uganda provides the legal framework for the operations of the Uganda Prisons Service. It outlines the roles, responsibilities, and powers of prison officers, as well as the rights of prisoners. The act serves as a cornerstone for the rehabilitation and management of prisoners in the country.</p>
-    </div>
+<!-- About Sections Content (Initially Hidden) -->
+<div id="prisons-act" class="about-section">
+    <h3>Prisons Act</h3>
+    <p>The Prisons Act of Uganda provides the legal framework for the operations of the Uganda Prisons Service. It outlines the roles, responsibilities, and powers of prison officers, as well as the rights of prisoners. The act serves as a cornerstone for the rehabilitation and management of prisoners in the country.</p>
+</div>
 
-    <div id="vision-mission" class="about-section">
-        <h3>Vision and Mission</h3>
-        <p><strong>Vision:</strong> A centre of excellence in providing human rights-based correctional services in Africa.<br>
-        <strong>Mission:</strong> To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
-    </div>
+<div id="vision-mission" class="about-section">
+    <h3>Vision and Mission</h3>
+    <p><strong>Vision:</strong> A centre of excellence in providing human rights-based correctional services in Africa.<br>
+    <strong>Mission:</strong> To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
+</div>
 
-    <div id="oc-statement" class="about-section">
-        <h3>Officer in Charge Statement</h3>
-        <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners. The OC is also instrumental in driving the reforms within the prison system, ensuring that inmates are rehabilitated and reintegrated into society as law-abiding citizens.</p>
-    </div>
+<div id="oc-statement" class="about-section">
+    <h3>Officer in Charge Statement</h3>
+    <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners. The OC is also instrumental in driving the reforms within the prison system, ensuring that inmates are rehabilitated and reintegrated into society as law-abiding citizens.</p>
+</div>
 
-    <div id="core-values" class="about-section">
-        <h3>Core Values</h3>
-        <p><strong>Professionalism:</strong> We shall adhere to professional codes of conduct, exhibit a high degree of competence, and implement best practices.<br>
-        <strong>Reliability:</strong> We shall be accountable, trustworthy, effective, and efficient in conducting our work.<br>
-        <strong>Integrity:</strong> We shall uphold ethical values and maintain zero tolerance for corruption.<br>
-        <strong>Security:</strong> We shall ensure the safety and security of our clients and property at all times.<br>
-        <strong>Oneness:</strong> We shall exhibit unity of purpose in all aspects of our work.<br>
-        <strong>Nationalistic:</strong> We shall be nationalistic in outlook, character, and practice.<br>
-        <strong>Discipline:</strong> We shall adhere to rules, regulations, and codes of conduct and ethics.</p>
-    </div>
+<div id="core-values" class="about-section">
+    <h3>Core Values</h3>
+    <p><strong>Professionalism:</strong> We shall adhere to professional codes of conduct, exhibit a high degree of competence, and implement best practices.<br>
+    <strong>Reliability:</strong> We shall be accountable, trustworthy, effective, and efficient in conducting our work.<br>
+    <strong>Integrity:</strong> We shall uphold ethical values and maintain zero tolerance for corruption.<br>
+    <strong>Security:</strong> We shall ensure the safety and security of our clients and property at all times.<br>
+    <strong>Oneness:</strong> We shall exhibit unity of purpose in all aspects of our work.<br>
+    <strong>Nationalistic:</strong> We shall be nationalistic in outlook, character, and practice.<br>
+    <strong>Discipline:</strong> We shall adhere to rules, regulations, and codes of conduct and ethics.</p>
 </div>
 
 <!-- CSS for Styling -->
@@ -203,6 +203,7 @@
     #about-us-content {
         text-align: center;
         margin-top: 20px;
+        padding: 20px;
     }
 
     .about-item {
@@ -240,16 +241,22 @@
         background: #f4f4f4;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        min-height: 80vh; /* Ensure sections take up most of the viewport */
     }
 
     .about-section h3 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-bottom: 10px;
     }
 
     .about-section p {
-        font-size: 1rem;
+        font-size: 1.2rem;
         line-height: 1.6;
+    }
+
+    /* Full screen focus on content */
+    #about-us-content, .about-section {
+        transition: all 0.3s ease-in-out;
     }
 
     @media (max-width: 768px) {
@@ -273,12 +280,14 @@
         aboutUsContent.style.display = aboutUsContent.style.display === 'none' ? 'block' : 'none';
     }
 
-    // Toggle visibility of specific sections
+    // Toggle visibility of specific sections and display them in full screen
     function toggleSection(sectionId) {
         const sections = document.querySelectorAll('.about-section');
         sections.forEach(section => section.style.display = 'none'); // Hide all sections
         const section = document.getElementById(sectionId);
         section.style.display = 'block'; // Show the clicked section
+        document.body.scrollTop = 0; // Scroll to the top of the page for full view
+        document.documentElement.scrollTop = 0;
     }
 </script>
         <a href="#contact">
