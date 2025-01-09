@@ -186,7 +186,6 @@
         </div>
     </div>
 </header>
-
 <!-- Officer in Charge Section -->
 <section id="officer-in-charge">
     <div>
@@ -198,10 +197,30 @@
         <div>
             <p><strong>Introduction:</strong> Mr. Byekwaso is a leader whose strategic foresight and problem-solving skills have earned him respect. His leadership is marked by a methodical approach and focus on improving operations and enhancing agricultural production for self-sustainability.</p>
             <p><strong>Relationships and Passion:</strong> Mr. Byekwaso emphasizes transparency and professional development, cultivating a collaborative atmosphere. His dedication to the Uganda Prisons Service is evident in his passion for continuous improvement and innovation.</p>
-            <a href="javascript:void(0);" onclick="toggleReadMore()">Read More</a>
+            <div id="more-text" style="display: none;">
+                <p><strong>Achievements:</strong> Under his guidance, numerous initiatives have been successfully implemented, leading to improved efficiency and morale within the Uganda Prisons Service. His commitment to sustainable practices and innovation continues to inspire many.</p>
+                <p><strong>Vision:</strong> Mr. Byekwaso envisions a self-reliant institution that not only reforms lives but also contributes meaningfully to the nation's development.</p>
+            </div>
+            <a href="javascript:void(0);" id="read-more-btn" onclick="toggleReadMore()">Read More</a>
         </div>
     </div>
 </section>
+
+<!-- JavaScript -->
+<script>
+    function toggleReadMore() {
+        const moreText = document.getElementById("more-text");
+        const readMoreBtn = document.getElementById("read-more-btn");
+
+        if (moreText.style.display === "none") {
+            moreText.style.display = "block";
+            readMoreBtn.textContent = "Read Less";
+        } else {
+            moreText.style.display = "none";
+            readMoreBtn.textContent = "Read More";
+        }
+    }
+</script>
 
 <!-- Facility Overview Section -->
 <section id="overview" class="facility-overview">
