@@ -148,6 +148,135 @@
     </div>
 </header>
 
+<!-- About Us Section -->
+<section id="about-us-content">
+    <h2>About Us</h2>
+    <div class="grid">
+        <!-- Icon for Prisons Act -->
+        <div class="about-item" onclick="toggleSection('prisons-act')">
+            <i class="fas fa-book"></i>
+            <p>Prisons Act</p>
+        </div>
+        <!-- Icon for Vision and Mission -->
+        <div class="about-item" onclick="toggleSection('vision-mission')">
+            <i class="fas fa-bullseye"></i>
+            <p>Vision and Mission</p>
+        </div>
+        <!-- Icon for Officer in Charge Statement -->
+        <div class="about-item" onclick="toggleSection('oc-statement')">
+            <i class="fas fa-user-tie"></i>
+            <p>OC Statement</p>
+        </div>
+        <!-- Icon for Core Values -->
+        <div class="about-item" onclick="toggleSection('core-values')">
+            <i class="fas fa-heart"></i>
+            <p>Core Values</p>
+        </div>
+    </div>
+
+    <!-- About Sections Content -->
+    <div id="prisons-act" class="about-section">
+        <h3>Prisons Act</h3>
+        <p>The Prisons Act of Uganda provides the legal framework for the operations of the Uganda Prisons Service. It outlines the roles, responsibilities, and powers of prison officers, as well as the rights of prisoners. The act serves as a cornerstone for the rehabilitation and management of prisoners in the country.</p>
+    </div>
+
+    <div id="vision-mission" class="about-section">
+        <h3>Vision and Mission</h3>
+        <p><strong>Vision:</strong> To be a highly professional, humane, and efficient institution that contributes to national security, social reintegration, and economic transformation.<br>
+        <strong>Mission:</strong> To promote public safety through the efficient management of offenders, by providing reformative, rehabilitative, and vocational programs.</p>
+    </div>
+
+    <div id="oc-statement" class="about-section">
+        <h3>Officer in Charge Statement</h3>
+        <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners. The OC is also instrumental in driving the reforms within the prison system, ensuring that inmates are rehabilitated and reintegrated into society as law-abiding citizens.</p>
+    </div>
+
+    <div id="core-values" class="about-section">
+        <h3>Core Values</h3>
+        <p><strong>Integrity:</strong> Upholding the highest ethical standards in all our actions.<br>
+        <strong>Accountability:</strong> Being accountable for our actions and decisions.<br>
+        <strong>Excellence:</strong> Striving for excellence in service delivery.<br>
+        <strong>Respect:</strong> Showing respect for the dignity of every person, including prisoners and staff.</p>
+    </div>
+</section>
+
+<!-- CSS for Styling -->
+<style>
+    #about-us-content {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .about-item {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid #003366;
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .about-item i {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        transition: transform 0.3s, color 0.3s;
+    }
+
+    .about-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: scale(1.1);
+    }
+
+    .about-item i:hover {
+        transform: scale(1.2);
+        color: #003366;
+    }
+
+    .about-section {
+        display: none;
+        text-align: left;
+        padding: 20px;
+        margin-top: 20px;
+        background: #f4f4f4;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-section h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .grid {
+            grid-template-columns: 1fr; /* 1 column for small screens */
+        }
+    }
+</style>
+
+<!-- JavaScript for Toggling Content -->
+<script>
+    function toggleSection(sectionId) {
+        const sections = document.querySelectorAll('.about-section');
+        sections.forEach(section => section.style.display = 'none'); // Hide all sections
+        const section = document.getElementById(sectionId);
+        section.style.display = 'block'; // Show the clicked section
+    }
+</script>
+
 <!-- Officer in Charge Section -->
 <section id="officer-in-charge">
     <img src="images/bye3.jpeg" alt="Mr. Andrew Kenneth Byekwaso">
