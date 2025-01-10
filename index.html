@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UG Prison Farm Kitalya</title>
-    <!-- External CSS Link -->
     <link rel="stylesheet" href="styles.css">
-    
     <style>
         html, body {
             margin: 0;
@@ -53,79 +51,42 @@
         }
 
         #about-us {
-            padding: 20px;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-
-        #about-us h2 {
-            font-size: 2rem;
-            color: #003366;
-        }
-
-        #about-us .main-icon {
-            cursor: pointer;
-            display: inline-block;
-            background-color: #003366;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        #about-us .main-icon:hover {
-            transform: scale(1.1);
+            margin-top: 40px;
         }
 
         #about-us .sub-icons {
             display: none;
-            margin-top: 20px;
+            padding-left: 20px;
         }
 
-        #about-us .sub-icons button {
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #003366;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #about-us .content-area {
-            display: none;
-            padding: 20px;
-            background-color: white;
-            color: #003366;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-
-        #about-us .content-area button {
-            background-color: #003366;
-            color: white;
-            border: none;
+        #about-us .sub-icons a {
+            display: block;
             padding: 10px;
-            margin-bottom: 20px;
-            cursor: pointer;
+            text-decoration: none;
+            color: #003366;
+            border: 1px solid #003366;
+            margin: 10px 0;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        footer {
+        #about-us .sub-icons a:hover {
             background-color: #003366;
             color: white;
-            text-align: center;
-            padding: 10px 0;
         }
 
-        footer p, footer a {
-            font-size: 0.9rem;
-            color: white;
+        .content-view {
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 20px auto;
+            display: none;
         }
 
-        footer a {
-            text-decoration: none;
+        .content-view h2 {
+            color: #003366;
         }
     </style>
 </head>
@@ -144,33 +105,55 @@
             <i class="fas fa-building"></i>
             <p>Facility Overview</p>
         </a>
-
+        
         <!-- About Us Section -->
-        <div id="about-us">
-            <h2>About Us</h2>
-            <div class="main-icon" onclick="toggleSubIcons()">
-                <i class="fas fa-info-circle"></i>
-                <p>Learn More</p>
+        <section id="about-us" style="padding: 20px; background-color: #f4f4f4;">
+            <h2 style="text-align: center; color: #003366; font-size: 2rem;">About Us</h2>
+
+            <!-- Main Icon for About Us -->
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <div onclick="toggleSubIcons()" 
+                     style="cursor: pointer; text-align: center; background-color: #003366; color: white; padding: 20px; border-radius: 10px; width: 200px;">
+                    <i style="font-size: 2rem;">&#8505;</i> <!-- Info Icon -->
+                    <p style="margin-top: 10px; font-weight: bold;">About Us</p>
+                </div>
             </div>
-            <div class="sub-icons">
-                <button onclick="showContent('vision-mission')">Vision & Mission</button>
-                <button onclick="showContent('oc-statement')">Officer In Charge Statement</button>
-                <button onclick="showContent('core-values')">Core Values</button>
-                <button onclick="showContent('prisons-act')">Prisons Act</button>
+
+            <!-- Sub-icons (Hidden by Default) -->
+            <div id="sub-icons" style="display: none; margin-top: 20px;">
+                <ul style="list-style-type: none; padding: 0; text-align: center;">
+                    <li style="margin: 10px 0;">
+                        <a href="javascript:void(0);" onclick="showContent('vision-mission')" style="text-decoration: none; color: #003366;">Vision & Mission</a>
+                    </li>
+                    <li style="margin: 10px 0;">
+                        <a href="javascript:void(0);" onclick="showContent('oc-statement')" style="text-decoration: none; color: #003366;">Officer In Charge Statement</a>
+                    </li>
+                    <li style="margin: 10px 0;">
+                        <a href="javascript:void(0);" onclick="showContent('core-values')" style="text-decoration: none; color: #003366;">Core Values</a>
+                    </li>
+                    <li style="margin: 10px 0;">
+                        <a href="javascript:void(0);" onclick="showContent('prisons-act')" style="text-decoration: none; color: #003366;">Prisons Act</a>
+                    </li>
+                </ul>
             </div>
-            <div class="content-area">
-                <button onclick="hideContent()">Back</button>
-                <div id="vision-mission">
+
+            <!-- Full-Screen Content Area -->
+            <div id="content-area" style="display: none; padding: 20px; background-color: white; color: #003366;">
+                <button onclick="hideContent()" 
+                        style="background-color: #003366; color: white; border: none; padding: 10px; margin-bottom: 20px; cursor: pointer;">
+                    Back
+                </button>
+                <div id="vision-mission" style="display: none;">
                     <h3>Vision</h3>
                     <p>A centre of excellence in providing human rights-based correctional services in Africa.</p>
                     <h3>Mission</h3>
                     <p>To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
                 </div>
-                <div id="oc-statement">
+                <div id="oc-statement" style="display: none;">
                     <h3>Officer In Charge Statement</h3>
                     <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners.</p>
                 </div>
-                <div id="core-values">
+                <div id="core-values" style="display: none;">
                     <h3>Core Values</h3>
                     <ol>
                         <li>Professionalism: We shall adhere to professional codes of conduct.</li>
@@ -182,12 +165,13 @@
                         <li>Discipline: We conform to rules and ethical standards.</li>
                     </ol>
                 </div>
-                <div id="prisons-act">
+                <div id="prisons-act" style="display: none;">
                     <h3>Prisons Act</h3>
-                    <a href="path_to_prisons_act.pdf" download>Download the Prisons Act PDF</a>
+                    <a href="path_to_prisons_act.pdf" download style="color: #003366; text-decoration: underline;">Download the Prisons Act PDF</a>
                 </div>
             </div>
-        </div>
+        </section>
+
         <a href="#contact">
             <i class="fas fa-phone-alt"></i>
             <p>Contact</p>
@@ -197,15 +181,15 @@
 
 <script>
     function toggleSubIcons() {
-        const subIcons = document.querySelector('#about-us .sub-icons');
+        const subIcons = document.getElementById('sub-icons');
         subIcons.style.display = subIcons.style.display === 'none' ? 'block' : 'none';
     }
 
     function showContent(contentId) {
-        const contentArea = document.querySelector('#about-us .content-area');
+        const contentArea = document.getElementById('content-area');
         contentArea.style.display = 'block';
 
-        const sections = contentArea.querySelectorAll('div');
+        const sections = document.querySelectorAll('#content-area > div');
         sections.forEach(section => {
             section.style.display = 'none';
         });
@@ -214,14 +198,10 @@
     }
 
     function hideContent() {
-        const contentArea = document.querySelector('#about-us .content-area');
+        const contentArea = document.getElementById('content-area');
         contentArea.style.display = 'none';
     }
 </script>
-
-<footer>
-    <p>&copy; UG Prison Farm Kitalya</p>
-</footer>
 
 </body>
 </html>
