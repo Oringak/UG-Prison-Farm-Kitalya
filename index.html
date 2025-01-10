@@ -139,73 +139,79 @@
             <i class="fas fa-building"></i>
             <p>Facility Overview</p>
         </a>
-      
-<!-- About Us Section -->
-<section id="about-us" style="padding: 20px; background-color: #f4f4f4;">
-    <h2 style="text-align: center; color: #003366; font-size: 2rem;">About Us</h2>
+        <!-- Updated About Us Section -->
+        <section id="about-us" style="padding: 20px; background-color: #f4f4f4;">
+            <h2 style="text-align: center; color: #003366; font-size: 2rem; margin-bottom: 20px;">About Us</h2>
 
-    <!-- Main Icon for About Us -->
-    <div style="display: flex; justify-content: center; margin-top: 20px;">
-        <div onclick="toggleSubIcons()" 
-             style="cursor: pointer; text-align: center; background-color: #003366; color: white; padding: 20px; border-radius: 10px; width: 200px; transition: transform 0.3s;">
-            <i style="font-size: 2rem;">&#8505;</i>
-            <p style="margin-top: 10px; font-weight: bold;">About Us</p>
-        </div>
+            <!-- Main Icon for About Us -->
+            <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+                <div onclick="toggleSubIcons()" 
+                     style="cursor: pointer; text-align: center; background-color: #003366; color: white; padding: 20px; border-radius: 10px; width: 200px; transition: transform 0.3s;">
+                    <i style="font-size: 2rem;">&#8505;</i>
+                    <p style="margin-top: 10px; font-weight: bold;">About Us</p>
+                </div>
+            </div>
+
+            <!-- Sub-icons (Hidden by Default) -->
+            <div id="sub-icons" style="display: none; margin-top: 20px; text-align: center;">
+                <button onclick="showContent('vision-mission')" 
+                        style="margin: 10px; padding: 10px 20px; background-color: #003366; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    Vision & Mission
+                </button>
+                <button onclick="showContent('oc-statement')" 
+                        style="margin: 10px; padding: 10px 20px; background-color: #003366; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    Officer In Charge Statement
+                </button>
+                <button onclick="showContent('core-values')" 
+                        style="margin: 10px; padding: 10px 20px; background-color: #003366; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    Core Values
+                </button>
+                <button onclick="showContent('prisons-act')" 
+                        style="margin: 10px; padding: 10px 20px; background-color: #003366; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    Prisons Act
+                </button>
+            </div>
+
+            <!-- Full-Screen Content Area -->
+            <div id="content-area" style="display: none; padding: 20px; background-color: white; color: #003366; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); margin-top: 20px;">
+                <button onclick="hideContent()" 
+                        style="background-color: #003366; color: white; border: none; padding: 10px; margin-bottom: 20px; cursor: pointer; border-radius: 5px;">
+                    Back
+                </button>
+                <div id="vision-mission" style="display: none;">
+                    <h3>Vision</h3>
+                    <p>A centre of excellence in providing human rights-based correctional services in Africa.</p>
+                    <h3>Mission</h3>
+                    <p>To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
+                </div>
+                <div id="oc-statement" style="display: none;">
+                    <h3>Officer In Charge Statement</h3>
+                    <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners.</p>
+                </div>
+                <div id="core-values" style="display: none;">
+                    <h3>Core Values</h3>
+                    <ol>
+                        <li>Professionalism: We shall adhere to professional codes of conduct.</li>
+                        <li>Reliability: We shall be accountable and trustworthy.</li>
+                        <li>Integrity: We shall uphold ethical values and honesty.</li>
+                        <li>Security: We ensure safety of our clients and property.</li>
+                        <li>Oneness: We exhibit unity of purpose.</li>
+                        <li>Nationalistic: We are nationalistic in outlook.</li>
+                        <li>Discipline: We conform to rules and ethical standards.</li>
+                    </ol>
+                </div>
+                <div id="prisons-act" style="display: none;">
+                    <h3>Prisons Act</h3>
+                    <a href="path_to_prisons_act.pdf" download style="color: #003366; text-decoration: underline;">Download the Prisons Act PDF</a>
+                </div>
+            </div>
+        </section>
+        <a href="#contact">
+            <i class="fas fa-phone-alt"></i>
+            <p>Contact</p>
+        </a>
     </div>
-
-    <!-- Sub-icons (Hidden by Default) -->
-    <div id="sub-icons" style="display: none; margin-top: 20px;">
-        <ul style="list-style-type: none; padding: 0; text-align: center;">
-            <li style="margin: 10px 0;">
-                <a href="javascript:void(0);" onclick="showContent('vision-mission')" style="display: block; background-color: #003366; color: white; padding: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">Vision & Mission</a>
-            </li>
-            <li style="margin: 10px 0;">
-                <a href="javascript:void(0);" onclick="showContent('oc-statement')" style="display: block; background-color: #003366; color: white; padding: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">Officer In Charge Statement</a>
-            </li>
-            <li style="margin: 10px 0;">
-                <a href="javascript:void(0);" onclick="showContent('core-values')" style="display: block; background-color: #003366; color: white; padding: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">Core Values</a>
-            </li>
-            <li style="margin: 10px 0;">
-                <a href="javascript:void(0);" onclick="showContent('prisons-act')" style="display: block; background-color: #003366; color: white; padding: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">Prisons Act</a>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Full-Screen Content Area -->
-    <div id="content-area" style="display: none; padding: 20px; background-color: white; color: #003366; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); margin-top: 20px;">
-        <button onclick="hideContent()" 
-                style="background-color: #003366; color: white; border: none; padding: 10px; margin-bottom: 20px; cursor: pointer; border-radius: 5px;">
-            Back
-        </button>
-        <div id="vision-mission" style="display: none;">
-            <h3>Vision</h3>
-            <p>A centre of excellence in providing human rights-based correctional services in Africa.</p>
-            <h3>Mission</h3>
-            <p>To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
-        </div>
-        <div id="oc-statement" style="display: none;">
-            <h3>Officer In Charge Statement</h3>
-            <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners.</p>
-        </div>
-        <div id="core-values" style="display: none;">
-            <h3>Core Values</h3>
-            <ol>
-                <li>Professionalism: We shall adhere to professional codes of conduct.</li>
-                <li>Reliability: We shall be accountable and trustworthy.</li>
-                <li>Integrity: We shall uphold ethical values and honesty.</li>
-                <li>Security: We ensure safety of our clients and property.</li>
-                <li>Oneness: We exhibit unity of purpose.</li>
-                <li>Nationalistic: We are nationalistic in outlook.</li>
-                <li>Discipline: We conform to rules and ethical standards.</li>
-            </ol>
-        </div>
-        <div id="prisons-act" style="display: none;">
-            <h3>Prisons Act</h3>
-            <a href="path_to_prisons_act.pdf" download style="color: #003366; text-decoration: underline;">Download the Prisons Act PDF</a>
-        </div>
-    </div>
-</section>
-
+</header>
 <script>
     function toggleSubIcons() {
         const subIcons = document.getElementById('sub-icons');
@@ -229,13 +235,8 @@
         contentArea.style.display = 'none';
     }
 </script>
-
-        <a href="#contact">
-            <i class="fas fa-phone-alt"></i>
-            <p>Contact</p>
-        </a>
-    </div>
-</header>
+</body>
+</html>
 
 <!-- Officer in Charge Section -->
 <section id="officer-in-charge">
