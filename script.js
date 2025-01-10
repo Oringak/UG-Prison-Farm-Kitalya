@@ -13,3 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+javascript
+Copy code
+function toggleAboutSubIcons() {
+    var aboutSubIcons = document.getElementById('about-sub-icons');
+    aboutSubIcons.style.display = aboutSubIcons.style.display === 'none' ? 'block' : 'none';
+    document.getElementById('about-content').style.display = 'none';
+}
+
+function showAboutContent(contentType) {
+    // Hide all content sections
+    var contentSections = document.querySelectorAll('.content-section');
+    contentSections.forEach(function (section) {
+        section.style.display = 'none';
+    });
+
+    // Show the selected content section
+    document.getElementById(contentType + '-content').style.display = 'block';
+
+    // Display the content area
+    document.getElementById('about-content').style.display = 'block';
+}
