@@ -88,6 +88,29 @@
         .content-view h2 {
             color: #003366;
         }
+
+        #officer-in-charge {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #officer-in-charge img {
+            width: 120px; /* Small photo */
+            height: 120px; /* Small photo */
+            border-radius: 50%;
+            margin: 0 auto; /* Center image */
+        }
+
+        #officer-in-charge h2 {
+            font-size: 2rem;
+            margin-top: 10px;
+        }
+
+        #officer-in-charge p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
     </style>
 </head>
 <body>
@@ -105,7 +128,7 @@
             <i class="fas fa-building"></i>
             <p>Facility Overview</p>
         </a>
-        
+
         <!-- About Us Section -->
         <section id="about-us" style="padding: 20px; background-color: #f4f4f4;">
             <h2 style="text-align: center; color: #003366; font-size: 2rem;">About Us</h2>
@@ -200,88 +223,6 @@
     function hideContent() {
         const contentArea = document.getElementById('content-area');
         contentArea.style.display = 'none';
-    }
-</script>
-
-</body>
-</html>
-<!-- Officer in Charge Section -->
-<section id="officer-in-charge">
-    <img src="images/bye3.jpeg" alt="Mr. Andrew Kenneth Byekwaso">
-    <h2>Mr. Andrew Kenneth Byekwaso</h2>
-    <h3>Superintendent of Prisons (S.P.)</h3>
-    <p>Mr. Andrew Kenneth Byekwaso is a consummate leader whose strategic foresight and exceptional problem-solving acumen have earned him the respect of both his colleagues and the broader community. 
-        <span id="more-text">His leadership is characterized by a methodical approach to complex challenges, consistently employing analytical rigor and innovative thinking to enhance the operational efficiency of the prison facility. By fostering a culture of continuous improvement, Mr. Byekwaso has successfully integrated modern technologies and systems that not only bolster security but also optimize agricultural production, making the farm an exemplary model of self-sustainability. His decision-making processes are rooted in a balanced consideration of both short-term operational needs and long-term vision, ensuring that each challenge is met with a solution that is both pragmatic and forward-thinking. Beyond his technical expertise, Mr. Byekwaso has cultivated a harmonious and highly productive working environment through his unwavering commitment to nurturing positive relationships with his staff. He recognizes that effective leadership hinges on empowering individuals, and as such, he emphasizes transparency, open communication, and professional development. This inclusive management style has fostered a collaborative atmosphere where staff feel valued and motivated to contribute to the facility's success. His deep passion for the Uganda Prisons Service is evident in his tireless dedication to its mission, and his genuine love for the department drives him to continuously seek innovative ways to elevate the work of his team, instilling a sense of pride and purpose across all levels of operation.</span>
-        <a href="javascript:void(0);" onclick="toggleReadMore()" id="read-more-btn">Read More</a>
-    </p>
-</section>
-
-<!-- Facility Overview Section -->
-<section id="overview" class="facility-overview">
-    <h2>Facility View Icons</h2>
-    <p style="text-align: center; margin: 0 auto; max-width: 600px;">
-        Discover our innovative approach to rehabilitation through images of our facilities.
-    </p>
-    <div class="image-gallery" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 20px; padding: 0 20px;">
-        <a href="#main-entrance" class="image-item" style="text-decoration: none; text-align: center; border: 2px solid #003366; padding: 20px; border-radius: 10px; transition: transform 0.3s;">
-            <i class="fas fa-door-open" style="font-size: 2.5rem; color: #003366;"></i>
-            <p style="color: #003366; font-weight: bold;">Main Entrance</p>
-        </a>
-        <a href="#rehabilitation-area" class="image-item" style="text-decoration: none; text-align: center; border: 2px solid #003366; padding: 20px; border-radius: 10px; transition: transform 0.3s;">
-            <i class="fas fa-users" style="font-size: 2.5rem; color: #003366;"></i>
-            <p style="color: #003366; font-weight: bold;">Rehabilitation Area</p>
-        </a>
-        <a href="#agricultural-training" class="image-item" style="text-decoration: none; text-align: center; border: 2px solid #003366; padding: 20px; border-radius: 10px; transition: transform 0.3s;">
-            <i class="fas fa-seedling" style="font-size: 2.5rem; color: #003366;"></i>
-            <p style="color: #003366; font-weight: bold;">Agricultural Training</p>
-        </a>
-        <a href="#community-service" class="image-item" style="text-decoration: none; text-align: center; border: 2px solid #003366; padding: 20px; border-radius: 10px; transition: transform 0.3s;">
-            <i class="fas fa-handshake" style="font-size: 2.5rem; color: #003366;"></i>
-            <p style="color: #003366; font-weight: bold;">Community Service</p>
-        </a>
-    </div>
-</section>
-
-<!-- Footer Section -->
-<footer>
-    <p>&copy; 2025 UG Prison Farm Kitalya. All Rights Reserved.</p>
-    <p>
-        <a href="tel:+256787428252">+256 787 428 252</a> | 
-        <a href="mailto:info@ugandaprisons.go.ug">info@ugandaprisons.go.ug</a>
-    </p>
-</footer>
-
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script>
-    function toggleReadMore() {
-        const moreText = document.getElementById("more-text");
-        const readMoreBtn = document.getElementById("read-more-btn");
-
-        if (moreText.style.display === "none" || moreText.style.display === "") {
-            moreText.style.display = "inline";
-            readMoreBtn.textContent = "Read Less";
-        } else {
-            moreText.style.display = "none";
-            readMoreBtn.textContent = "Read More";
-        }
-    }
-
-    function toggleSubIcons() {
-        const subIcons = document.getElementById('about-us-icons');
-        if (subIcons.style.display === "none" || subIcons.style.display === "") {
-            subIcons.style.display = "block";
-        } else {
-            subIcons.style.display = "none";
-        }
-    }
-
-    function showContent(id) {
-        const contentViews = document.querySelectorAll('.content-view');
-        contentViews.forEach(content => content.style.display = 'none');
-        const content = document.getElementById(id);
-        if (content) {
-            content.style.display = 'block';
-        }
     }
 </script>
 
