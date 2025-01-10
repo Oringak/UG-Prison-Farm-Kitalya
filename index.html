@@ -50,61 +50,64 @@
             transform: scale(1.1);
         }
 
-        #officer-in-charge {
-            text-align: center;
+        #about-us {
             padding: 20px;
-        }
-
-        #officer-in-charge img {
-            max-width: 200px;
-            border-radius: 50%;
-        }
-
-        #officer-in-charge h2 {
-            font-size: 2rem;
-            margin-top: 10px;
-        }
-
-        #officer-in-charge h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        #officer-in-charge p {
-            font-size: 1rem;
-            margin: 10px 0;
-        }
-
-        #more-text {
-            display: none;
-        }
-
-        .facility-overview {
-            text-align: center;
             background-color: #f4f4f4;
-            padding: 20px 10px;
+            text-align: center;
         }
 
-        .facility-overview h2 {
+        #about-us h2 {
             font-size: 2rem;
-            margin-bottom: 10px;
+            color: #003366;
         }
 
-        .facility-overview p {
-            font-size: 1rem;
+        #about-us .main-icon {
+            cursor: pointer;
+            display: inline-block;
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        #about-us .main-icon:hover {
+            transform: scale(1.1);
+        }
+
+        #about-us .sub-icons {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #about-us .sub-icons button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #about-us .content-area {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            color: #003366;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        #about-us .content-area button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px;
             margin-bottom: 20px;
-        }
-
-        .facility-overview .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .facility-overview .image-item i {
-            font-size: 2.5rem;
-            color: #800000;
-            margin-bottom: 5px;
+            cursor: pointer;
+            border-radius: 5px;
         }
 
         footer {
@@ -139,56 +142,32 @@
             <i class="fas fa-building"></i>
             <p>Facility Overview</p>
         </a>
-        <!-- Updated About Us Section -->
-        <section id="about-us" style="padding: 20px; background-color: #f4f4f4;">
-            <h2 style="text-align: center; color: #003366; font-size: 2rem; margin-bottom: 20px;">About Us</h2>
-
-            <!-- Main Icon for About Us -->
-            <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-                <div onclick="toggleSubIcons()" 
-                     style="cursor: pointer; text-align: center; background-color: #003366; color: white; padding: 20px; border-radius: 10px; width: 200px; transition: transform 0.3s;">
-                    <i style="font-size: 2rem;">&#8505;</i>
-                    <p style="margin-top: 10px; font-weight: bold;">About Us</p>
-                </div>
+        <!-- About Us Section -->
+        <div id="about-us">
+            <h2>About Us</h2>
+            <div class="main-icon" onclick="toggleSubIcons()">
+                <i class="fas fa-info-circle"></i>
+                <p>Learn More</p>
             </div>
-
-            <!-- Sub-icons (Hidden by Default) -->
-            <div id="sub-icons" style="display: none; margin-top: 20px; text-align: center;">
-                <button onclick="showContent('vision-mission')" 
-                        style="margin: 10px; padding: 10px 20px; background-color: #003366; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                    Vision & Mission
-                </button>
-                <button onclick="showContent('oc-statement')" 
-                        style="margin: 10px; padding: 10px 20px; background-color: #003366; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                    Officer In Charge Statement
-                </button>
-                <button onclick="showContent('core-values')" 
-                        style="margin: 10px; padding: 10px 20px; background-color: #003366; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                    Core Values
-                </button>
-                <button onclick="showContent('prisons-act')" 
-                        style="margin: 10px; padding: 10px 20px; background-color: #003366; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                    Prisons Act
-                </button>
+            <div class="sub-icons">
+                <button onclick="showContent('vision-mission')">Vision & Mission</button>
+                <button onclick="showContent('oc-statement')">Officer In Charge Statement</button>
+                <button onclick="showContent('core-values')">Core Values</button>
+                <button onclick="showContent('prisons-act')">Prisons Act</button>
             </div>
-
-            <!-- Full-Screen Content Area -->
-            <div id="content-area" style="display: none; padding: 20px; background-color: white; color: #003366; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); margin-top: 20px;">
-                <button onclick="hideContent()" 
-                        style="background-color: #003366; color: white; border: none; padding: 10px; margin-bottom: 20px; cursor: pointer; border-radius: 5px;">
-                    Back
-                </button>
-                <div id="vision-mission" style="display: none;">
+            <div class="content-area">
+                <button onclick="hideContent()">Back</button>
+                <div id="vision-mission">
                     <h3>Vision</h3>
                     <p>A centre of excellence in providing human rights-based correctional services in Africa.</p>
                     <h3>Mission</h3>
                     <p>To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
                 </div>
-                <div id="oc-statement" style="display: none;">
+                <div id="oc-statement">
                     <h3>Officer In Charge Statement</h3>
                     <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners.</p>
                 </div>
-                <div id="core-values" style="display: none;">
+                <div id="core-values">
                     <h3>Core Values</h3>
                     <ol>
                         <li>Professionalism: We shall adhere to professional codes of conduct.</li>
@@ -200,29 +179,30 @@
                         <li>Discipline: We conform to rules and ethical standards.</li>
                     </ol>
                 </div>
-                <div id="prisons-act" style="display: none;">
+                <div id="prisons-act">
                     <h3>Prisons Act</h3>
-                    <a href="path_to_prisons_act.pdf" download style="color: #003366; text-decoration: underline;">Download the Prisons Act PDF</a>
+                    <a href="path_to_prisons_act.pdf" download>Download the Prisons Act PDF</a>
                 </div>
             </div>
-        </section>
+        </div>
         <a href="#contact">
             <i class="fas fa-phone-alt"></i>
             <p>Contact</p>
         </a>
     </div>
 </header>
+
 <script>
     function toggleSubIcons() {
-        const subIcons = document.getElementById('sub-icons');
+        const subIcons = document.querySelector('#about-us .sub-icons');
         subIcons.style.display = subIcons.style.display === 'none' ? 'block' : 'none';
     }
 
     function showContent(contentId) {
-        const contentArea = document.getElementById('content-area');
+        const contentArea = document.querySelector('#about-us .content-area');
         contentArea.style.display = 'block';
 
-        const sections = document.querySelectorAll('#content-area > div');
+        const sections = contentArea.querySelectorAll('div');
         sections.forEach(section => {
             section.style.display = 'none';
         });
@@ -231,10 +211,15 @@
     }
 
     function hideContent() {
-        const contentArea = document.getElementById('content-area');
+        const contentArea = document.querySelector('#about-us .content-area');
         contentArea.style.display = 'none';
     }
 </script>
+
+<footer>
+    <p>&copy; UG Prison Farm Kitalya</p>
+</footer>
+
 </body>
 </html>
 
