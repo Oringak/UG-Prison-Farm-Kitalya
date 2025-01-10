@@ -122,47 +122,6 @@
         footer a {
             text-decoration: none;
         }
-
-        /* Styles for About Us Section and Sub Icons */
-        #about {
-            margin-top: 40px;
-        }
-
-        #about .sub-icons {
-            display: none;
-            padding-left: 20px;
-        }
-
-        #about .sub-icons a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: #003366;
-            border: 1px solid #003366;
-            margin: 10px 0;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        #about .sub-icons a:hover {
-            background-color: #003366;
-            color: white;
-        }
-
-        /* Full screen view for content */
-        .content-view {
-            padding: 20px;
-            background-color: #f9f9f9;
-            margin-top: 20px;
-            border-radius: 10px;
-            max-width: 800px;
-            margin: 20px auto;
-            display: none;
-        }
-
-        .content-view h2 {
-            color: #003366;
-        }
     </style>
 </head>
 <body>
@@ -180,15 +139,16 @@
             <i class="fas fa-building"></i>
             <p>Facility Overview</p>
         </a>
-      <!-- About Us Section -->
+      
+<!-- About Us Section -->
 <section id="about-us" style="padding: 20px; background-color: #f4f4f4;">
     <h2 style="text-align: center; color: #003366; font-size: 2rem;">About Us</h2>
 
     <!-- Main Icon for About Us -->
     <div style="display: flex; justify-content: center; margin-top: 20px;">
         <div onclick="toggleSubIcons()" 
-             style="cursor: pointer; text-align: center; background-color: #003366; color: white; padding: 20px; border-radius: 10px; width: 200px;">
-            <i style="font-size: 2rem;">&#8505;</i> <!-- Info Icon -->
+             style="cursor: pointer; text-align: center; background-color: #003366; color: white; padding: 20px; border-radius: 10px; width: 200px; transition: transform 0.3s;">
+            <i style="font-size: 2rem;">&#8505;</i>
             <p style="margin-top: 10px; font-weight: bold;">About Us</p>
         </div>
     </div>
@@ -197,24 +157,24 @@
     <div id="sub-icons" style="display: none; margin-top: 20px;">
         <ul style="list-style-type: none; padding: 0; text-align: center;">
             <li style="margin: 10px 0;">
-                <a href="javascript:void(0);" onclick="showContent('vision-mission')" style="text-decoration: none; color: #003366;">Vision & Mission</a>
+                <a href="javascript:void(0);" onclick="showContent('vision-mission')" style="display: block; background-color: #003366; color: white; padding: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">Vision & Mission</a>
             </li>
             <li style="margin: 10px 0;">
-                <a href="javascript:void(0);" onclick="showContent('oc-statement')" style="text-decoration: none; color: #003366;">Officer In Charge Statement</a>
+                <a href="javascript:void(0);" onclick="showContent('oc-statement')" style="display: block; background-color: #003366; color: white; padding: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">Officer In Charge Statement</a>
             </li>
             <li style="margin: 10px 0;">
-                <a href="javascript:void(0);" onclick="showContent('core-values')" style="text-decoration: none; color: #003366;">Core Values</a>
+                <a href="javascript:void(0);" onclick="showContent('core-values')" style="display: block; background-color: #003366; color: white; padding: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">Core Values</a>
             </li>
             <li style="margin: 10px 0;">
-                <a href="javascript:void(0);" onclick="showContent('prisons-act')" style="text-decoration: none; color: #003366;">Prisons Act</a>
+                <a href="javascript:void(0);" onclick="showContent('prisons-act')" style="display: block; background-color: #003366; color: white; padding: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">Prisons Act</a>
             </li>
         </ul>
     </div>
 
     <!-- Full-Screen Content Area -->
-    <div id="content-area" style="display: none; padding: 20px; background-color: white; color: #003366;">
+    <div id="content-area" style="display: none; padding: 20px; background-color: white; color: #003366; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); margin-top: 20px;">
         <button onclick="hideContent()" 
-                style="background-color: #003366; color: white; border: none; padding: 10px; margin-bottom: 20px; cursor: pointer;">
+                style="background-color: #003366; color: white; border: none; padding: 10px; margin-bottom: 20px; cursor: pointer; border-radius: 5px;">
             Back
         </button>
         <div id="vision-mission" style="display: none;">
@@ -269,6 +229,7 @@
         contentArea.style.display = 'none';
     }
 </script>
+
         <a href="#contact">
             <i class="fas fa-phone-alt"></i>
             <p>Contact</p>
