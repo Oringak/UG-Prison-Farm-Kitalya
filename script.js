@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-javascript
-Copy code
 function toggleAboutSubIcons() {
     var aboutSubIcons = document.getElementById('about-sub-icons');
     aboutSubIcons.style.display = aboutSubIcons.style.display === 'none' ? 'block' : 'none';
