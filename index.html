@@ -180,83 +180,101 @@
             <i class="fas fa-building"></i>
             <p>Facility Overview</p>
         </a>
-        <a href="#about">
-            <i class="fas fa-info-circle"></i>
-            <p>About Us</p>
-        </a>
+      <!-- About Us Section -->
+<section id="about-us" style="padding: 20px; background-color: #f4f4f4;">
+    <h2 style="text-align: center; color: #003366; font-size: 2rem;">About Us</h2>
+
+    <!-- Main Icon for About Us -->
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <div onclick="toggleSubIcons()" 
+             style="cursor: pointer; text-align: center; background-color: #003366; color: white; padding: 20px; border-radius: 10px; width: 200px;">
+            <i style="font-size: 2rem;">&#8505;</i> <!-- Info Icon -->
+            <p style="margin-top: 10px; font-weight: bold;">About Us</p>
+        </div>
+    </div>
+
+    <!-- Sub-icons (Hidden by Default) -->
+    <div id="sub-icons" style="display: none; margin-top: 20px;">
+        <ul style="list-style-type: none; padding: 0; text-align: center;">
+            <li style="margin: 10px 0;">
+                <a href="javascript:void(0);" onclick="showContent('vision-mission')" style="text-decoration: none; color: #003366;">Vision & Mission</a>
+            </li>
+            <li style="margin: 10px 0;">
+                <a href="javascript:void(0);" onclick="showContent('oc-statement')" style="text-decoration: none; color: #003366;">Officer In Charge Statement</a>
+            </li>
+            <li style="margin: 10px 0;">
+                <a href="javascript:void(0);" onclick="showContent('core-values')" style="text-decoration: none; color: #003366;">Core Values</a>
+            </li>
+            <li style="margin: 10px 0;">
+                <a href="javascript:void(0);" onclick="showContent('prisons-act')" style="text-decoration: none; color: #003366;">Prisons Act</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Full-Screen Content Area -->
+    <div id="content-area" style="display: none; padding: 20px; background-color: white; color: #003366;">
+        <button onclick="hideContent()" 
+                style="background-color: #003366; color: white; border: none; padding: 10px; margin-bottom: 20px; cursor: pointer;">
+            Back
+        </button>
+        <div id="vision-mission" style="display: none;">
+            <h3>Vision</h3>
+            <p>A centre of excellence in providing human rights-based correctional services in Africa.</p>
+            <h3>Mission</h3>
+            <p>To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
+        </div>
+        <div id="oc-statement" style="display: none;">
+            <h3>Officer In Charge Statement</h3>
+            <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners.</p>
+        </div>
+        <div id="core-values" style="display: none;">
+            <h3>Core Values</h3>
+            <ol>
+                <li>Professionalism: We shall adhere to professional codes of conduct.</li>
+                <li>Reliability: We shall be accountable and trustworthy.</li>
+                <li>Integrity: We shall uphold ethical values and honesty.</li>
+                <li>Security: We ensure safety of our clients and property.</li>
+                <li>Oneness: We exhibit unity of purpose.</li>
+                <li>Nationalistic: We are nationalistic in outlook.</li>
+                <li>Discipline: We conform to rules and ethical standards.</li>
+            </ol>
+        </div>
+        <div id="prisons-act" style="display: none;">
+            <h3>Prisons Act</h3>
+            <a href="path_to_prisons_act.pdf" download style="color: #003366; text-decoration: underline;">Download the Prisons Act PDF</a>
+        </div>
+    </div>
+</section>
+
+<script>
+    function toggleSubIcons() {
+        const subIcons = document.getElementById('sub-icons');
+        subIcons.style.display = subIcons.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function showContent(contentId) {
+        const contentArea = document.getElementById('content-area');
+        contentArea.style.display = 'block';
+
+        const sections = document.querySelectorAll('#content-area > div');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+
+        document.getElementById(contentId).style.display = 'block';
+    }
+
+    function hideContent() {
+        const contentArea = document.getElementById('content-area');
+        contentArea.style.display = 'none';
+    }
+</script>
         <a href="#contact">
             <i class="fas fa-phone-alt"></i>
             <p>Contact</p>
         </a>
     </div>
 </header>
-
-<!-- About Us Section -->
-<section id="about" style="background-color: #f4f4f4; padding: 40px 20px;">
-    <h2 style="font-size: 2.5rem; text-align: center; color: #003366; margin-bottom: 20px;">About Us</h2>
-    
-    <!-- About Us Icon (Clickable) -->
-    <div class="grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; justify-items: center;">
-        <a href="javascript:void(0);" id="about-icon" onclick="toggleAboutSubIcons()" style="text-decoration: none; color: white; text-align: center; border: 2px solid #003366; padding: 20px; border-radius: 10px; background-color: rgba(0, 51, 102, 0.1);">
-            <i class="fas fa-info-circle" style="font-size: 3rem; color: #003366;"></i>
-            <p style="color: #003366; font-weight: bold;">About Us</p>
-        </a>
-    </div>
-
-    <!-- Sub-Icons for About Us (Initially Hidden) -->
-    <div id="about-sub-icons" class="about-sub-icons" style="display: none; margin-top: 20px;">
-        <ul style="list-style-type: none; padding: 0; text-align: center;">
-            <li style="margin-bottom: 15px;"><a href="javascript:void(0);" onclick="showAboutContent('vision')">Vision</a></li>
-            <li style="margin-bottom: 15px;"><a href="javascript:void(0);" onclick="showAboutContent('mission')">Mission</a></li>
-            <li style="margin-bottom: 15px;"><a href="javascript:void(0);" onclick="showAboutContent('oc-statement')">Officer In Charge Statement</a></li>
-            <li style="margin-bottom: 15px;"><a href="javascript:void(0);" onclick="showAboutContent('core-values')">Core Values</a></li>
-            <li style="margin-bottom: 15px;"><a href="javascript:void(0);" onclick="showAboutContent('prisons-act')">Prisons Act</a></li>
-        </ul>
-    </div>
-
-    <!-- Full Screen Content for Each Sub-Icon -->
-    <div id="about-content" style="display: none; margin-top: 40px; text-align: center;">
-        <!-- Vision Content -->
-        <div id="vision-content" class="content-section" style="display: none;">
-            <h3 style="font-size: 2rem; color: #003366;">Vision</h3>
-            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; padding: 0 20px; line-height: 1.6;">A centre of excellence in providing human rights-based correctional services in Africa.</p>
-        </div>
-
-        <!-- Mission Content -->
-        <div id="mission-content" class="content-section" style="display: none;">
-            <h3 style="font-size: 2rem; color: #003366;">Mission</h3>
-            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; padding: 0 20px; line-height: 1.6;">To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
-        </div>
-
-        <!-- Officer In Charge Statement Content -->
-        <div id="oc-statement-content" class="content-section" style="display: none;">
-            <h3 style="font-size: 2rem; color: #003366;">Officer In Charge Statement</h3>
-            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; padding: 0 20px; line-height: 1.6;">The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners.</p>
-        </div>
-
-        <!-- Core Values Content -->
-        <div id="core-values-content" class="content-section" style="display: none;">
-            <h3 style="font-size: 2rem; color: #003366;">Core Values</h3>
-            <ol style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: left; line-height: 1.6;">
-                <li>Professionalism: We shall adhere to the professional codes of conduct, exhibit high degree of competence and best practices as prescribed for a given profession in the Public Service.</li>
-                <li>Reliability: We shall be accountable, trustworthy, effective and efficient in conducting our work.</li>
-                <li>Integrity: We shall uphold our ethical values, serve with honesty, and maintain zero tolerance to corruption.</li>
-                <li>Security: We shall at all times ensure safety and security of our clients, and the safety of prison property.</li>
-                <li>Oneness: We shall exhibit unity of purpose in all aspects of prison work.</li>
-                <li>Nationalistic: We shall be nationalistic in outlook, character and practices.</li>
-                <li>Discipline: We shall always behave in a manner that conforms with the rules and regulations and codes of conduct and ethics.</li>
-            </ol>
-        </div>
-
-        <!-- Prisons Act Content -->
-        <div id="prisons-act-content" class="content-section" style="display: none;">
-            <h3 style="font-size: 2rem; color: #003366;">Prisons Act</h3>
-            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; padding: 0 20px; line-height: 1.6;">
-                <a href="path_to_prisons_act.pdf" class="download-btn" download>Download the Prisons Act PDF</a>
-            </p>
-        </div>
-    </div>
-</section>
 
 <!-- Officer in Charge Section -->
 <section id="officer-in-charge">
