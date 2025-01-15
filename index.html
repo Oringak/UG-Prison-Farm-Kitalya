@@ -315,7 +315,7 @@
         <i class="fas fa-hands-helping"></i>
         <p>Rehabilitation Area</p>
     </a>
-    <div class="sub-icons-container">
+    <div class="sub-icons-container" id="sub-icons-container">
         <div class="sub-icon" id="formal-education">
             <a href="javascript:void(0);" onclick="showContent('formal-education-content')">
                 <i class="fas fa-graduation-cap"></i>
@@ -444,7 +444,7 @@
     let isSubIconsVisible = false;
 
     function toggleSubIcons() {
-        const subIconsContainer = document.querySelector('.sub-icons-container');
+        const subIconsContainer = document.getElementById('sub-icons-container');
         if (isSubIconsVisible) {
             subIconsContainer.style.display = 'none'; // Hide sub-icons
             hideAllContent(); // Hide content inside sub-icons
