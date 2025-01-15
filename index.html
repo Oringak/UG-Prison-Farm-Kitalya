@@ -396,7 +396,7 @@
     }
 
     .sub-icons-container {
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
     }
@@ -443,6 +443,7 @@
 <script>
     function toggleSubIcons() {
         const subIconsContainer = document.querySelector('.sub-icons-container');
+        // Toggle display of sub-icons
         subIconsContainer.style.display = (subIconsContainer.style.display === 'block') ? 'none' : 'block';
     }
 
