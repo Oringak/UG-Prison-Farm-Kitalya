@@ -309,13 +309,14 @@
             <i class="fas fa-door-open"></i>
             <p>Main Entrance</p>
         </a>
+
 <!-- Rehabilitation Area Section -->
 <div class="rehabilitation-area">
     <a href="javascript:void(0);" class="rehab-main-icon" onclick="toggleSubIcons()">
         <i class="fas fa-hands-helping"></i>
         <p>Rehabilitation Area</p>
     </a>
-    <div class="sub-icons-container" id="sub-icons-container">
+    <div class="sub-icons-container" id="rehab-sub-icons-container">
         <div class="sub-icon" id="formal-education">
             <a href="javascript:void(0);" onclick="showContent('formal-education-content')">
                 <i class="fas fa-graduation-cap"></i>
@@ -443,9 +444,9 @@
 
 <!-- JavaScript -->
 <script>
-    // Function to toggle the visibility of sub-icons
+    // Function to toggle the visibility of sub-icons in Rehabilitation Area
     function toggleSubIcons() {
-        const subIconsContainer = document.querySelector('.sub-icons-container');
+        const subIconsContainer = document.getElementById('rehab-sub-icons-container');
         const allSubContents = document.querySelectorAll('.sub-icon-content');
 
         if (subIconsContainer.style.display === 'block') {
@@ -476,6 +477,7 @@
         }
     }
 </script>
+
 <a href="#agricultural-training" class="image-item">
     <i class="fas fa-seedling"></i>
     <p>Agricultural Training</p>
