@@ -340,12 +340,14 @@
 
 <!-- CSS -->
 <style>
+    /* General styles for the Rehabilitation Area */
     .rehabilitation-area {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
+    /* Styles for the main icon */
     .rehab-main-icon {
         font-size: 24px;
         cursor: pointer;
@@ -353,6 +355,15 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 20px;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .rehab-main-icon:hover {
+        background-color: #0056b3;
     }
 
     .rehab-main-icon i {
@@ -360,23 +371,35 @@
         margin-right: 8px;
     }
 
+    /* Sub-icons container styles */
     .sub-icons-container {
-        display: none; /* Hidden by default */
+        display: none; /* Initially hidden */
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .sub-icon {
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .sub-icon {
-        margin: 10px 0;
-    }
-
+    /* Sub-icon titles */
     .sub-icon-title {
-        display: flex;
-        align-items: center;
         font-size: 20px;
         cursor: pointer;
-        text-decoration: none;
+        display: flex;
+        align-items: center;
         color: #333;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .sub-icon-title:hover {
+        background-color: #ddd;
     }
 
     .sub-icon-title i {
@@ -384,25 +407,32 @@
         margin-right: 8px;
     }
 
+    /* Sub-icon content */
     .sub-icon-content {
-        display: none; /* Hidden by default */
+        display: none; /* Initially hidden */
         padding: 10px;
         text-align: left;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-top: 10px;
+        width: 100%;
+        max-width: 400px;
     }
 </style>
 
 <!-- JavaScript -->
 <script>
-    // Track if sub-icons are visible
+    // Track the visibility of the sub-icons
     let areSubIconsVisible = false;
 
-    // Toggle display of sub-icons
+    // Function to toggle sub-icons
     function toggleSubIcons() {
         const subIconsContainer = document.getElementById('sub-icons-container');
         const allContents = document.querySelectorAll('.sub-icon-content');
 
         if (areSubIconsVisible) {
-            // Hide sub-icons and content
+            // Hide sub-icons and their content
             subIconsContainer.style.display = 'none';
             allContents.forEach(content => (content.style.display = 'none'));
         } else {
@@ -413,18 +443,13 @@
         areSubIconsVisible = !areSubIconsVisible;
     }
 
-    // Toggle visibility of a specific sub-icon's content
+    // Function to toggle a specific sub-icon's content
     function toggleContent(contentId) {
         const content = document.getElementById(contentId);
-
-        // Toggle display of the clicked content
-        if (content.style.display === 'block') {
-            content.style.display = 'none';
-        } else {
-            content.style.display = 'block';
-        }
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
     }
 </script>
+
 
         <a href="#agricultural-training" class="image-item">
             <i class="fas fa-seedling"></i>
