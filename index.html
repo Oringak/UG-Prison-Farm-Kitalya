@@ -180,51 +180,55 @@
             <i class="fas fa-building"></i>
             <p>Facility Overview</p>
         </a>
-<!-- About Us Section -->
+        <!-- About Us Section -->
 <section id="about" style="margin-top: 20px;">
     <a href="javascript:void(0);" onclick="toggleSubIcons()" style="font-size: 18px; font-weight: bold; text-decoration: underline;">About Us</a>
     <div class="sub-icons" id="about-us-icons" style="display: none; margin-top: 10px;">
-        <a href="javascript:void(0);" onclick="showContent('prisons-act')" class="sub-icon" style="display: inline-block; margin-right: 10px; padding: 8px 12px; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">Prisons Act</a>
-        <a href="javascript:void(0);" onclick="showContent('vision-mission')" class="sub-icon" style="display: inline-block; margin-right: 10px; padding: 8px 12px; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">Vision and Mission</a>
-        <a href="javascript:void(0);" onclick="showContent('oc-statement')" class="sub-icon" style="display: inline-block; margin-right: 10px; padding: 8px 12px; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">Officer in Charge Statement</a>
-        <a href="javascript:void(0);" onclick="showContent('core-values')" class="sub-icon" style="display: inline-block; margin-right: 10px; padding: 8px 12px; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">Core Values</a>
-    </div>
-
-    <!-- Content Views -->
-    <div class="content-container" style="margin-top: 20px;">
-        <div id="prisons-act" class="content-view" style="display: none;">
-            <h2>Prisons Act</h2>
-            <!-- Download link for the PDF -->
-            <a href="pdf/Prisons Act Uganda 2006.pdf" download style="color: blue; text-decoration: underline;">Download PDF</a>
-            <!-- Embedded PDF viewer -->
-            <embed src="pdf/Prisons Act Uganda 2006.pdf" type="application/pdf" width="100%" height="600px" style="border: 1px solid #ccc; margin-top: 10px;">
-        </div>
-
-        <div id="vision-mission" class="content-view" style="display: none;">
-            <h2>Vision and Mission</h2>
-            <p><strong>Vision:</strong> A centre of excellence in providing human rights-based correctional services in Africa.</p>
-            <p><strong>Mission:</strong> To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
-        </div>
-
-        <div id="oc-statement" class="content-view" style="display: none;">
-            <h2>Officer in Charge Statement</h2>
-            <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners.</p>
-        </div>
-
-        <div id="core-values" class="content-view" style="display: none;">
-            <h2>Core Values</h2>
-            <ol>
-                <li><strong>Professionalism:</strong> We shall adhere to the professional codes of conduct, exhibit a high degree of competence, and follow best practices as prescribed for a given profession in the Public Service.</li>
-                <li><strong>Reliability:</strong> We shall be accountable, trustworthy, effective, and efficient in conducting our work.</li>
-                <li><strong>Integrity:</strong> We shall uphold our ethical values, serve with honesty, and maintain zero tolerance for corruption.</li>
-                <li><strong>Security:</strong> We shall ensure the safety and security of our clients and the property of the prisons at all times.</li>
-                <li><strong>Oneness:</strong> We shall exhibit unity of purpose in all aspects of prison work.</li>
-                <li><strong>Nationalistic:</strong> We shall be nationalistic in outlook, character, and practices.</li>
-                <li><strong>Discipline:</strong> We shall always behave in a manner that conforms with the rules, regulations, codes of conduct, and ethics.</li>
-            </ol>
-        </div>
+        <a href="javascript:void(0);" onclick="showContent('prisons-act')" class="about-icon" style="display: inline-block; margin-right: 10px; padding: 8px 12px; background-color: #007bff; border-radius: 5px; text-decoration: none; color: white; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease;">Prisons Act</a>
+        <a href="javascript:void(0);" onclick="showContent('vision-mission')" class="about-icon" style="display: inline-block; margin-right: 10px; padding: 8px 12px; background-color: #007bff; border-radius: 5px; text-decoration: none; color: white; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease;">Vision and Mission</a>
+        <a href="javascript:void(0);" onclick="showContent('oc-statement')" class="about-icon" style="display: inline-block; margin-right: 10px; padding: 8px 12px; background-color: #007bff; border-radius: 5px; text-decoration: none; color: white; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease;">Officer in Charge Statement</a>
+        <a href="javascript:void(0);" onclick="showContent('core-values')" class="about-icon" style="display: inline-block; margin-right: 10px; padding: 8px 12px; background-color: #007bff; border-radius: 5px; text-decoration: none; color: white; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease;">Core Values</a>
     </div>
 </section>
+
+<!-- Full-Screen Content Overlay -->
+<div id="content-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); color: white; overflow-y: auto; z-index: 1000; padding: 20px;">
+    <button onclick="closeContent()" style="position: absolute; top: 20px; right: 20px; background-color: red; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;">Close</button>
+    <div id="content-display"></div>
+</div>
+
+<!-- Content Views (Hidden by Default) -->
+<div style="display: none;">
+    <div id="prisons-act">
+        <h2>Prisons Act</h2>
+        <a href="pdf/Prisons Act Uganda 2006.pdf" download style="color: blue; text-decoration: underline;">Download PDF</a>
+        <embed src="pdf/Prisons Act Uganda 2006.pdf" type="application/pdf" width="100%" height="600px" style="border: 1px solid #ccc; margin-top: 10px;">
+    </div>
+
+    <div id="vision-mission">
+        <h2>Vision and Mission</h2>
+        <p><strong>Vision:</strong> A centre of excellence in providing human rights-based correctional services in Africa.</p>
+        <p><strong>Mission:</strong> To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
+    </div>
+
+    <div id="oc-statement">
+        <h2>Officer in Charge Statement</h2>
+        <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners.</p>
+    </div>
+
+    <div id="core-values">
+        <h2>Core Values</h2>
+        <ol>
+            <li><strong>Professionalism:</strong> We shall adhere to the professional codes of conduct, exhibit a high degree of competence, and follow best practices as prescribed for a given profession in the Public Service.</li>
+            <li><strong>Reliability:</strong> We shall be accountable, trustworthy, effective, and efficient in conducting our work.</li>
+            <li><strong>Integrity:</strong> We shall uphold our ethical values, serve with honesty, and maintain zero tolerance for corruption.</li>
+            <li><strong>Security:</strong> We shall ensure the safety and security of our clients and the property of the prisons at all times.</li>
+            <li><strong>Oneness:</strong> We shall exhibit unity of purpose in all aspects of prison work.</li>
+            <li><strong>Nationalistic:</strong> We shall be nationalistic in outlook, character, and practices.</li>
+            <li><strong>Discipline:</strong> We shall always behave in a manner that conforms with the rules, regulations, codes of conduct, and ethics.</li>
+        </ol>
+    </div>
+</div>
 
 <script>
     // Toggle the display of sub-icons
@@ -233,14 +237,31 @@
         subIcons.style.display = subIcons.style.display === 'none' ? 'block' : 'none';
     }
 
-    // Show specific content and hide others
+    // Show specific content in full-screen mode
     function showContent(id) {
-        const contents = document.querySelectorAll('.content-view');
-        contents.forEach(content => {
-            content.style.display = content.id === id ? 'block' : 'none';
-        });
+        const contentOverlay = document.getElementById('content-overlay');
+        const contentDisplay = document.getElementById('content-display');
+
+        // Clear previous content
+        contentDisplay.innerHTML = '';
+
+        // Get the selected content
+        const content = document.getElementById(id);
+        if (content) {
+            contentDisplay.innerHTML = content.innerHTML;
+        }
+
+        // Show the overlay
+        contentOverlay.style.display = 'block';
+    }
+
+    // Close the full-screen overlay
+    function closeContent() {
+        const contentOverlay = document.getElementById('content-overlay');
+        contentOverlay.style.display = 'none';
     }
 </script>
+
 
 <!-- Officer in Charge Section -->
 <section id="officer-in-charge">
