@@ -441,10 +441,17 @@
 
 <!-- JavaScript -->
 <script>
+    let isSubIconsVisible = false;
+
     function toggleSubIcons() {
         const subIconsContainer = document.querySelector('.sub-icons-container');
-        // Toggle display of sub-icons
-        subIconsContainer.style.display = (subIconsContainer.style.display === 'block') ? 'none' : 'block';
+        if (isSubIconsVisible) {
+            subIconsContainer.style.display = 'none'; // Hide sub-icons
+            hideAllContent(); // Hide content inside sub-icons
+        } else {
+            subIconsContainer.style.display = 'flex'; // Show sub-icons
+        }
+        isSubIconsVisible = !isSubIconsVisible;
     }
 
     function showContent(contentId) {
@@ -455,6 +462,13 @@
             } else {
                 content.style.display = 'none';
             }
+        });
+    }
+
+    function hideAllContent() {
+        const allContents = document.querySelectorAll('.sub-icon-content');
+        allContents.forEach(content => {
+            content.style.display = 'none'; // Hide all content when closing sub-icons
         });
     }
 
