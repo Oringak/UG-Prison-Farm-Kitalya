@@ -180,11 +180,10 @@
             <i class="fas fa-building"></i>
             <p>Facility Overview</p>
         </a>
-      
-<!-- About Us Section -->
+      <!-- About Us Section -->
 <section id="about">
     <a href="javascript:void(0);" onclick="toggleSubIcons()">About Us</a>
-    <div class="sub-icons" id="about-us-icons">
+    <div class="sub-icons" id="about-us-icons" style="display: none;">
         <a href="javascript:void(0);" onclick="showContent('prisons-act')">Prisons Act</a>
         <a href="javascript:void(0);" onclick="showContent('vision-mission')">Vision and Mission</a>
         <a href="javascript:void(0);" onclick="showContent('oc-statement')">Officer in Charge Statement</a>
@@ -192,24 +191,26 @@
     </div>
 
     <!-- Content Views -->
-    <div id="prisons-act" class="content-view">
+    <div id="prisons-act" class="content-view" style="display: none;">
         <h2>Prisons Act</h2>
-        <a href="path/to/prisons-act.pdf" download>Download PDF</a>
-        <embed src="path/to/prisons-act.pdf" width="100%" height="600px">
+        <!-- Download link for the PDF -->
+        <a href="pdf/Prisons Act Uganda 2006.pdf" download>Download PDF</a>
+        <!-- Embedded PDF viewer -->
+        <embed src="pdf/Prisons Act Uganda 2006.pdf" type="application/pdf" width="100%" height="600px">
     </div>
 
-    <div id="vision-mission" class="content-view">
+    <div id="vision-mission" class="content-view" style="display: none;">
         <h2>Vision and Mission</h2>
         <p><strong>Vision:</strong> A centre of excellence in providing human rights-based correctional services in Africa.</p>
         <p><strong>Mission:</strong> To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
     </div>
 
-    <div id="oc-statement" class="content-view">
+    <div id="oc-statement" class="content-view" style="display: none;">
         <h2>Officer in Charge Statement</h2>
         <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners.</p>
     </div>
 
-    <div id="core-values" class="content-view">
+    <div id="core-values" class="content-view" style="display: none;">
         <h2>Core Values</h2>
         <ol>
             <li><strong>Professionalism:</strong> We shall adhere to the professional codes of conduct, exhibit a high degree of competence, and follow best practices as prescribed for a given profession in the Public Service.</li>
@@ -222,12 +223,22 @@
         </ol>
     </div>
 </section>
-        <a href="#contact">
-            <i class="fas fa-phone-alt"></i>
-            <p>Contact</p>
-        </a>
-    </div>
-</header>
+
+<script>
+    // Toggle the display of sub-icons
+    function toggleSubIcons() {
+        const subIcons = document.getElementById('about-us-icons');
+        subIcons.style.display = subIcons.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Show specific content and hide others
+    function showContent(id) {
+        const contents = document.querySelectorAll('.content-view');
+        contents.forEach(content => {
+            content.style.display = content.id === id ? 'block' : 'none';
+        });
+    }
+</script>
 
 <!-- Officer in Charge Section -->
 <section id="officer-in-charge">
