@@ -179,7 +179,7 @@
             <p>About Us</p>
         </a>
 
-        <!-- Contact Section -->
+       <!-- Contact Section -->
 <section id="contact">
     <!-- Contact Icon with functionality to toggle details -->
     <a href="javascript:void(0);" class="contact-icon" onclick="toggleContactDetails()">
@@ -188,7 +188,7 @@
     </a>
 
     <!-- Hidden Contact Details that show up when the icon is clicked -->
-    <div id="contact-details" style="display: none; padding: 10px; background-color: #f0f0f0; border-radius: 5px; margin-top: 10px;">
+    <div id="contact-details" style="display: none; padding: 10px; background-color: #f0f0f0; border-radius: 5px; margin-top: 10px; position: absolute; z-index: 1000;">
         <p><strong>Telegram:</strong> <a href="https://t.me/SUPRISONS" target="_blank">SUPRISONS</a></p>
         <p><strong>Telephone:</strong> <a href="tel:+256787428252">+256787428252</a>, <a href="tel:+256701314013">+256701314013</a></p>
         <p><strong>P.O. BOX 7181 KAMPALA UGANDA</strong></p>
@@ -196,8 +196,39 @@
     </div>
 </section>
 
+<style>
+    /* Contact Icon Styling */
+    .contact-icon {
+        display: inline-block;
+        text-align: center;
+        padding: 10px;
+        background-color: #003366;
+        color: white;
+        border-radius: 10px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .contact-icon:hover {
+        background-color: #800000;
+        transform: scale(1.1);
+    }
+
+    /* Position the Contact Details to appear without affecting the layout */
+    #contact-details {
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        width: 250px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        border-radius: 8px;
+        z-index: 1000;
+    }
+</style>
+
 <script>
-    // Function to toggle visibility of contact details
+    // Function to toggle visibility of contact details without affecting other icons
     function toggleContactDetails() {
         const contactDetails = document.getElementById('contact-details');
         contactDetails.style.display = contactDetails.style.display === 'none' ? 'block' : 'none';
