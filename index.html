@@ -311,26 +311,26 @@
         </a>
 <!-- Rehabilitation Area Section -->
 <div class="rehabilitation-area">
-    <a href="javascript:void(0);" class="rehab-main-icon" onclick="toggleSubIcons()">
+    <div class="rehab-main-icon" onclick="toggleSubIcons()">
         <i class="fas fa-hands-helping"></i>
         <p>Rehabilitation Area</p>
-    </a>
+    </div>
     <div class="sub-icons-container" id="sub-icons-container">
         <div class="sub-icon">
-            <a href="javascript:void(0);" onclick="showContent('formal-education-content')">
+            <div class="sub-icon-title" onclick="toggleContent('formal-education-content')">
                 <i class="fas fa-graduation-cap"></i>
                 <p>Formal Education</p>
-            </a>
+            </div>
             <div class="sub-icon-content" id="formal-education-content">
                 <p>The rehabilitation of inmates at the UG Prisons Farm Kitalya through a formal education program...</p>
             </div>
         </div>
 
         <div class="sub-icon">
-            <a href="javascript:void(0);" onclick="showContent('vocational-content')">
+            <div class="sub-icon-title" onclick="toggleContent('vocational-content')">
                 <i class="fas fa-cogs"></i>
                 <p>Vocational</p>
-            </a>
+            </div>
             <div class="sub-icon-content" id="vocational-content">
                 <p>The vocational training program at UG Prisons Farm Kitalya provides inmates with practical skills...</p>
             </div>
@@ -361,7 +361,7 @@
     }
 
     .sub-icons-container {
-        display: none; /* Initially hidden */
+        display: none; /* Hidden by default */
         flex-direction: column;
         align-items: center;
     }
@@ -370,21 +370,22 @@
         margin: 10px 0;
     }
 
-    .sub-icon a {
+    .sub-icon-title {
         display: flex;
         align-items: center;
         font-size: 20px;
+        cursor: pointer;
         text-decoration: none;
         color: #333;
     }
 
-    .sub-icon i {
+    .sub-icon-title i {
         font-size: 28px;
         margin-right: 8px;
     }
 
     .sub-icon-content {
-        display: none; /* Initially hidden */
+        display: none; /* Hidden by default */
         padding: 10px;
         text-align: left;
     }
@@ -392,36 +393,39 @@
 
 <!-- JavaScript -->
 <script>
-    let isSubIconsVisible = false;
+    // Track if sub-icons are visible
+    let areSubIconsVisible = false;
 
+    // Toggle display of sub-icons
     function toggleSubIcons() {
         const subIconsContainer = document.getElementById('sub-icons-container');
         const allContents = document.querySelectorAll('.sub-icon-content');
 
-        if (isSubIconsVisible) {
-            subIconsContainer.style.display = 'none'; // Hide sub-icons
-            allContents.forEach(content => content.style.display = 'none'); // Hide all sub-content
+        if (areSubIconsVisible) {
+            // Hide sub-icons and content
+            subIconsContainer.style.display = 'none';
+            allContents.forEach(content => (content.style.display = 'none'));
         } else {
-            subIconsContainer.style.display = 'flex'; // Show sub-icons
+            // Show sub-icons
+            subIconsContainer.style.display = 'flex';
         }
 
-        isSubIconsVisible = !isSubIconsVisible;
+        areSubIconsVisible = !areSubIconsVisible;
     }
 
-    function showContent(contentId) {
+    // Toggle visibility of a specific sub-icon's content
+    function toggleContent(contentId) {
         const content = document.getElementById(contentId);
-        const allContents = document.querySelectorAll('.sub-icon-content');
 
-        // Toggle visibility of the clicked content
-        allContents.forEach(c => {
-            if (c.id === contentId) {
-                c.style.display = c.style.display === 'block' ? 'none' : 'block';
-            } else {
-                c.style.display = 'none'; // Hide all other contents
-            }
-        });
+        // Toggle display of the clicked content
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+        } else {
+            content.style.display = 'block';
+        }
     }
 </script>
+
         <a href="#agricultural-training" class="image-item">
             <i class="fas fa-seedling"></i>
             <p>Agricultural Training</p>
