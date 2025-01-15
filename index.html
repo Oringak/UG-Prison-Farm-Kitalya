@@ -224,6 +224,31 @@
     </div>
 </section>
 
+<!-- Contact Section -->
+<section id="contact">
+    <!-- Contact Icon with functionality to toggle details -->
+    <a href="javascript:void(0);" class="contact-icon" onclick="toggleContactDetails()">
+        <i class="fas fa-phone-alt"></i>
+        <p>Contact</p>
+    </a>
+
+    <!-- Hidden Contact Details that show up when the icon is clicked -->
+    <div id="contact-details" style="display: none; padding: 10px; background-color: #f0f0f0; border-radius: 5px; margin-top: 10px;">
+        <p><strong>Telegram:</strong> <a href="https://t.me/SUPRISONS" target="_blank">SUPRISONS</a></p>
+        <p><strong>Telephone:</strong> <a href="tel:+256787428252">+256787428252</a>, <a href="tel:+256701314013">+256701314013</a></p>
+        <p><strong>P.O. BOX 7181 KAMPALA UGANDA</strong></p>
+        <p><strong>Email:</strong> <a href="mailto:info@ugandaprisons.go.ug">info@ugandaprisons.go.ug</a></p>
+    </div>
+</section>
+
+<script>
+    // Function to toggle visibility of contact details
+    function toggleContactDetails() {
+        const contactDetails = document.getElementById('contact-details');
+        contactDetails.style.display = contactDetails.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
+
 <!-- Officer in Charge Section -->
 <section id="officer-in-charge">
     <img src="images/bye3.jpeg" alt="Mr. Andrew Kenneth Byekwaso">
