@@ -309,7 +309,13 @@
             <i class="fas fa-door-open"></i>
             <p>Main Entrance</p>
         </a>
-      <!-- Rehabilitation Area Section -->
+    <!-- Home Button -->
+<a href="javascript:void(0);" class="home-icon" onclick="goHome()">
+    <i class="fas fa-home"></i>
+    <p>Home</p>
+</a>
+
+<!-- Rehabilitation Area Section -->
 <div class="rehabilitation-area">
     <a href="javascript:void(0);" class="rehab-main-icon" onclick="toggleSubIcons()">
         <i class="fas fa-hands-helping"></i>
@@ -437,10 +443,32 @@
     .read-more:hover {
         background-color: #0056b3;
     }
+
+    .home-icon {
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .home-icon i {
+        font-size: 36px;
+        margin-right: 8px;
+    }
 </style>
 
 <!-- JavaScript -->
 <script>
+    function goHome() {
+        // Close any open sub-icon content when the Home button is clicked
+        const allContents = document.querySelectorAll('.sub-icon-content');
+        allContents.forEach(content => {
+            content.style.display = 'none';
+        });
+    }
+
     function toggleSubIcons() {
         const subIconsContainer = document.querySelector('.sub-icons-container');
         subIconsContainer.style.display = (subIconsContainer.style.display === 'block') ? 'none' : 'block';
