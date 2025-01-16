@@ -166,10 +166,17 @@
     <img src="images/upslogo-removebg-preview.png" alt="UG Prison Farm Kitalya">
     <h1>UG Prison Farm Kitalya</h1>
     <div class="grid">
-        <a href="#home">
+        <a href="javascript:void(0);" onclick="goHome()">
             <i class="fas fa-home"></i>
             <p>Home</p>
         </a>
+        
+        <script>
+            function goHome() {
+                // Redirect to the homepage
+                window.location.href = 'index.html';  // Replace 'index.html' with the actual URL of your homepage if it's different.
+            }
+        </script>
         <a href="#overview">
             <i class="fas fa-building"></i>
             <p>Facility Overview</p>
