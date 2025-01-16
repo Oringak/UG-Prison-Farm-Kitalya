@@ -5,6 +5,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UG Prison Farm Kitalya</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        html, body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            padding: 50px 0;
+            background: linear-gradient(to right, #003366, #800000);
+            color: rgb(37, 16, 16);
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-items: center;
+            margin-top: 20px;
+        }
+
+        .grid a {
+            text-decoration: none;
+            color: rgb(138, 21, 192);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #fff;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .grid a i {
+            font-size: 2rem; /* Smaller icon size */
+            margin-bottom: 10px;
+        }
+
+        .grid a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        #officer-in-charge {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #officer-in-charge img {
+            max-width: 150px; /* Smaller image size */
+            border-radius: 50%;
+        }
+
+        #officer-in-charge h2 {
+            font-size: 2rem;
+            margin-top: 10px;
+        }
+
+        #officer-in-charge h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        #officer-in-charge p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        #more-text {
+            display: none;
+        }
+
+        .facility-overview {
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px 10px;
+        }
+
+        .facility-overview h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .facility-overview p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .facility-overview .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .facility-overview .image-item i {
+            font-size: 2.5rem;
+            color: #800000;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p, footer a {
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+
+        #about .sub-icons {
+            display: none;
+            padding-left: 20px;
+        }
+
+        #about .sub-icons a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #003366;
+            border: 1px solid #003366;
+            margin: 10px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #about .sub-icons a:hover {
+            background-color: #003366;
+            color: white;
+        }
+
+        .content-view {
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+            border-radius: 10px;
+            max-width: 100%; /* Full-screen content */
+            margin: 20px auto;
+            display: none;
+        }
+
+        .content-view h2 {
+            color: #003366;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,7 +166,7 @@
     <img src="images/upslogo-removebg-preview.png" alt="UG Prison Farm Kitalya">
     <h1>UG Prison Farm Kitalya</h1>
     <div class="grid">
-        <a href="javascript:void(0);" onclick="goHome()">
+        <a href="#home">
             <i class="fas fa-home"></i>
             <p>Home</p>
         </a>
@@ -25,20 +178,6 @@
             <i class="fas fa-info-circle"></i>
             <p>About Us</p>
         </a>
-
-        <section id="contact">
-            <a href="javascript:void(0);" class="contact-icon" onclick="toggleContactDetails()">
-                <i class="fas fa-phone-alt"></i>
-                <p>Contact</p>
-            </a>
-
-            <div id="contact-details" style="display: none; padding: 10px; background-color: #f0f0f0; border-radius: 5px; margin-top: 10px;">
-                <p><strong>Telegram:</strong> <a href="https://t.me/SUPRISONS" target="_blank">SUPRISONS</a></p>
-                <p><strong>Telephone:</strong> <a href="tel:+256787428252">+256787428252</a>, <a href="tel:+256701314013">+256701314013</a></p>
-                <p><strong>P.O. BOX 7181 KAMPALA UGANDA</strong></p>
-                <p><strong>Email:</strong> <a href="mailto:info@ugandaprisons.go.ug">info@ugandaprisons.go.ug</a></p>
-            </div>
-        </section>
     </div>
 </header>
 
@@ -51,23 +190,36 @@
         <a href="javascript:void(0);" onclick="showContent('core-values')">Core Values</a>
     </div>
 
+    <!-- Content Views -->
     <div class="content-container">
         <div id="prisons-act" class="content-view">
             <h2>Prisons Act</h2>
             <a href="pdf/Prisons Act Uganda 2006.pdf" download>Download PDF</a>
             <embed src="pdf/Prisons Act Uganda 2006.pdf" type="application/pdf" width="100%" height="600px">
         </div>
-        <div id="vision-mission" class="content-view" style="display:none;">
+
+        <div id="vision-mission" class="content-view">
             <h2>Vision and Mission</h2>
-            <p>Our vision is to provide professional correctional services while the mission is to enhance public safety...</p>
+            <p><strong>Vision:</strong> A centre of excellence in providing human rights-based correctional services in Africa.</p>
+            <p><strong>Mission:</strong> To contribute to the protection and development of society by providing safe, secure, and humane custody of offenders while placing human rights at the centre of their correctional programmes.</p>
         </div>
-        <div id="oc-statement" class="content-view" style="display:none;">
+
+        <div id="oc-statement" class="content-view">
             <h2>Officer in Charge Statement</h2>
-            <p>Welcome to the UG Prison Farm Kitalya. Our goal is to reform and rehabilitate...</p>
+            <p>The Officer in Charge (OC) is responsible for maintaining order, discipline, and the safe custody of prisoners.</p>
         </div>
-        <div id="core-values" class="content-view" style="display:none;">
+
+        <div id="core-values" class="content-view">
             <h2>Core Values</h2>
-            <p>Our core values include integrity, discipline, and dedication to the correctional process...</p>
+            <ol>
+                <li><strong>Professionalism:</strong> We shall adhere to the professional codes of conduct, exhibit a high degree of competence, and follow best practices.</li>
+                <li><strong>Reliability:</strong> We shall be accountable, trustworthy, and efficient in conducting our work.</li>
+                <li><strong>Integrity:</strong> We shall uphold our ethical values, serve with honesty, and maintain zero tolerance for corruption.</li>
+                <li><strong>Security:</strong> We shall ensure the safety and security of our clients and the property of the prisons at all times.</li>
+                <li><strong>Oneness:</strong> We shall exhibit unity of purpose in all aspects of prison work.</li>
+                <li><strong>Nationalistic:</strong> We shall be nationalistic in outlook, character, and practices.</li>
+                <li><strong>Discipline:</strong> We shall always behave in a manner that conforms with the rules and regulations.</li>
+            </ol>
         </div>
     </div>
 </section>
@@ -77,9 +229,10 @@
     <img src="images/bye3.jpeg" alt="Mr. Andrew Kenneth Byekwaso">
     <h2>Mr. Andrew Kenneth Byekwaso</h2>
     <h3>Superintendent of Prisons (S.P.)</h3>
-    <p>Mr. Andrew Kenneth Byekwaso is a consummate leader with extensive experience in prison administration and rehabilitation...</p>
-    <p id="more-text" style="display:none;">Additional information about Mr. Byekwaso and his contribution to the facility...</p>
-    <a href="javascript:void(0);" onclick="toggleReadMore()" id="read-more-btn">Read More</a>
+    <p>Mr. Andrew Kenneth Byekwaso is a consummate leader whose strategic foresight and exceptional problem-solving acumen have earned him the respect of both his colleagues and the broader community. 
+        <span id="more-text">His leadership is characterized by a methodical approach to complex challenges, consistently employing analytical rigor and innovative thinking to enhance the operational efficiency of the prison facility. By fostering a culture of continuous improvement, Mr. Byekwaso has successfully integrated modern technologies and systems that not only bolster security but also optimize agricultural production, making the farm an exemplary model of self-sustainability. His decision-making processes are rooted in a balanced consideration of both short-term operational needs and long-term vision, ensuring that each challenge is met with a solution that is both pragmatic and forward-thinking.</span>
+        <a href="javascript:void(0);" onclick="toggleReadMore()" id="read-more-btn">Read More</a>
+    </p>
 </section>
 
 <!-- Facility Overview Section -->
@@ -91,42 +244,59 @@
             <i class="fas fa-door-open"></i>
             <p>Main Entrance</p>
         </a>
-    </div>
-</section>
-
-<!-- Rehabilitation Area Section -->
-<section id="rehabilitation-area">
-    <h2>Rehabilitation Area</h2>
-    <div class="rehab-main-icon">
-        <a href="javascript:void(0);" onclick="toggleSubIcons()">
-            <i class="fas fa-cogs"></i>
-            <p>Sub Rehabilitation Areas</p>
+        <a href="#rehabilitation-area" class="image-item">
+            <i class="fas fa-users"></i>
+            <p>Rehabilitation Area</p>
+        </a>
+        <a href="#agricultural-training" class="image-item">
+            <i class="fas fa-seedling"></i>
+            <p>Agricultural Training</p>
+        </a>
+        <a href="#community-service" class="image-item">
+            <i class="fas fa-handshake"></i>
+            <p>Community Service</p>
         </a>
     </div>
-    <div id="rehab-sub-icons-container" style="display:none;">
-        <div class="sub-icon">
-            <a href="javascript:void(0);" onclick="showContent('recovery-center')">
-                <i class="fas fa-heartbeat"></i>
-                <p>Recovery Center</p>
-            </a>
-        </div>
-        <div class="sub-icon">
-            <a href="javascript:void(0);" onclick="showContent('training-center')">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <p>Training Center</p>
-            </a>
-        </div>
-    </div>
-    <div class="sub-icon-content" id="recovery-center" style="display:none;">
-        <h3>Recovery Center</h3>
-        <p>The recovery center is designed for inmates to receive medical care and rehabilitation services...</p>
-    </div>
-    <div class="sub-icon-content" id="training-center" style="display:none;">
-        <h3>Training Center</h3>
-        <p>The training center provides inmates with skills in various trades such as carpentry, masonry, and tailoring...</p>
-    </div>
 </section>
 
-<script src="scripts.js"></script>
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2025 UG Prison Farm Kitalya. All Rights Reserved.</p>
+    <p>
+        <a href="tel:+256787428252">+256 787 428 252</a> | 
+        <a href="mailto:info@ugandaprisons.go.ug">info@ugandaprisons.go.ug</a>
+    </p>
+</footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+    function toggleReadMore() {
+        const moreText = document.getElementById("more-text");
+        const readMoreBtn = document.getElementById("read-more-btn");
+
+        if (moreText.style.display === "none" || moreText.style.display === "") {
+            moreText.style.display = "inline";
+            readMoreBtn.textContent = "Read Less";
+        } else {
+            moreText.style.display = "none";
+            readMoreBtn.textContent = "Read More";
+        }
+    }
+
+    function toggleSubIcons() {
+        const subIcons = document.getElementById('about-us-icons');
+        subIcons.style.display = subIcons.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function showContent(id) {
+        const contentViews = document.querySelectorAll('.content-view');
+        contentViews.forEach(content => content.style.display = 'none');
+        const content = document.getElementById(id);
+        if (content) {
+            content.style.display = 'block';
+        }
+    }
+</script>
+
 </body>
 </html>
