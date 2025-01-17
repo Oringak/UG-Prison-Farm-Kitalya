@@ -321,12 +321,58 @@
                 <p>Formal Education</p>
             </a>
             <div class="sub-icon-content" id="formal-education-content">
-                <p>The rehabilitation of inmates at the UG Prisons Farm Kitalya through a formal education program offers a transformative opportunity for personal growth and reintegration into society. By providing access to structured learning, this initiative equips prisoners with essential academic and vocational skills, fostering a sense of purpose and self-worth. Formal education not only empowers the individuals within the prison system but also lays the groundwork for reducing recidivism, as educated individuals are more likely to secure stable employment upon release and reintegrate successfully into their communities. Moreover, the program helps shift the focus from punitive measures to rehabilitative strategies, offering a chance for inmates to improve their lives through intellectual and emotional development.</p>
-                <p>This approach recognizes the critical role that education plays in breaking the cycle of crime and providing a second chance. Inmates at Kitalya have the opportunity to pursue various academic disciplines, from basic literacy to advanced vocational training, aligning with the demands of the modern workforce. By fostering a culture of learning within the prison, the program nurtures critical thinking, discipline, and perseverance among participants. It also promotes social harmony and reduces tensions within the facility, as inmates are given a constructive outlet for their energy and potential. Ultimately, formal education within the prison system serves as a powerful tool for rehabilitation, offering not just knowledge, but hope for a better future.</p>
-                <button class="read-more" onclick="toggleFullText('formal-education-content')">Read More</button>
+                <p data-number="1.">The rehabilitation of inmates at the UG Prisons Farm Kitalya through a formal education program offers a transformative opportunity for personal growth and reintegration into society.</p>
+                <p data-number="2.">By providing access to structured learning, this initiative equips prisoners with essential academic and vocational skills, fostering a sense of purpose and self-worth.</p>
+                <button class="read-more" onclick="toggleFullText('formal-education-content', true)">Read More</button>
+                <button class="read-less" style="display:none;" onclick="toggleFullText('formal-education-content', false)">Read Less</button>
             </div>
         </div>
-
+    </div>
+    
+    <script>
+        function showContent(contentId) {
+            const contentDiv = document.getElementById(contentId);
+            if (!contentDiv.classList.contains('full-screen')) {
+                contentDiv.style.display = 'block';
+                contentDiv.classList.add('full-screen');
+                contentDiv.innerHTML += `<span class="close-full-screen" onclick="closeFullScreen('${contentId}')">&times;</span>`;
+            }
+        }
+    
+        function closeFullScreen(contentId) {
+            const contentDiv = document.getElementById(contentId);
+            contentDiv.classList.remove('full-screen');
+            const closeButton = contentDiv.querySelector('.close-full-screen');
+            if (closeButton) closeButton.remove();
+        }
+    
+        function toggleFullText(contentId, expand) {
+            const contentDiv = document.getElementById(contentId);
+            const paragraphs = contentDiv.querySelectorAll('p');
+            const readMoreButton = contentDiv.querySelector('.read-more');
+            const readLessButton = contentDiv.querySelector('.read-less');
+    
+            if (expand) {
+                paragraphs.forEach((p) => (p.style.display = 'block'));
+                readMoreButton.style.display = 'none';
+                readLessButton.style.display = 'block';
+            } else {
+                paragraphs.forEach((p, index) => {
+                    p.style.display = index === 0 ? 'block' : 'none';
+                });
+                readMoreButton.style.display = 'block';
+                readLessButton.style.display = 'none';
+            }
+        }
+    
+        // Initially show only the first sentence
+        document.querySelectorAll('.sub-icon-content').forEach((contentDiv) => {
+            const paragraphs = contentDiv.querySelectorAll('p');
+            paragraphs.forEach((p, index) => {
+                if (index !== 0) p.style.display = 'none';
+            });
+        });
+    </script>
         <div class="sub-icon" id="vocational">
             <a href="javascript:void(0);" onclick="showContent('vocational-content')">
                 <i class="fas fa-cogs"></i>
