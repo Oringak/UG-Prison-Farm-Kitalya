@@ -336,7 +336,38 @@
             </div>
         </div>
 
-        <!-- Other sections remain unchanged -->
+        <div class="sub-icon" id="other-trainings">
+            <a href="javascript:void(0);" onclick="showContent('other-trainings-content')">
+                <i class="fas fa-tools"></i>
+                <p>Other Trainings</p>
+            </a>
+            <div class="sub-icon-content" id="other-trainings-content">
+                <p>In addition to vocational skills, UG Prisons Farm Kitalya offers other vital training programs...</p>
+                <button class="read-more" onclick="toggleFullText('other-trainings-content')">Read More</button>
+            </div>
+        </div>
+
+        <div class="sub-icon" id="rehabilitation-activities">
+            <a href="javascript:void(0);" onclick="showContent('rehabilitation-activities-content')">
+                <i class="fas fa-heartbeat"></i>
+                <p>Other Rehabilitation Activities</p>
+            </a>
+            <div class="sub-icon-content" id="rehabilitation-activities-content">
+                <p>UG Prisons Farm Kitalya incorporates a variety of other rehabilitation activities...</p>
+                <button class="read-more" onclick="toggleFullText('rehabilitation-activities-content')">Read More</button>
+            </div>
+        </div>
+
+        <div class="sub-icon" id="social-reintegration">
+            <a href="javascript:void(0);" onclick="showContent('social-reintegration-content')">
+                <i class="fas fa-users"></i>
+                <p>Social Reintegration</p>
+            </a>
+            <div class="sub-icon-content" id="social-reintegration-content">
+                <p>Social reintegration is a crucial aspect of the rehabilitation process at UG Prisons Farm Kitalya...</p>
+                <button class="read-more" onclick="toggleFullText('social-reintegration-content')">Read More</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -357,32 +388,70 @@
         margin-bottom: 20px;
     }
 
+    .rehab-main-icon i {
+        font-size: 36px;
+        margin-right: 8px;
+    }
+
     .sub-icons-container {
-        display: none; /* Initially hidden */
+        display: none;
+        flex-direction: column;
+        align-items: center;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background: rgba(255, 255, 255, 0.9);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
         overflow: auto;
+        z-index: 1000;
+    }
+
+    .sub-icon {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .sub-icon a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .sub-icon i {
+        font-size: 28px;
+        margin-right: 8px;
     }
 
     .sub-icon-content {
-        display: none; /* Initially hidden */
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background: rgba(255, 255, 255, 0.95);
-        padding: 20px;
-        text-align: center;
+        overflow: auto;
         z-index: 2000;
+        padding: 20px;
+        text-align: left;
+    }
+
+    .read-more {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .read-more:hover {
+        background-color: #0056b3;
     }
 </style>
 
@@ -390,7 +459,7 @@
 <script>
     function toggleSubIcons() {
         const subIconsContainer = document.querySelector('.sub-icons-container');
-        subIconsContainer.style.display = subIconsContainer.style.display === 'flex' ? 'none' : 'flex';
+        subIconsContainer.style.display = subIconsContainer.style.display === 'block' ? 'none' : 'block';
     }
 
     function showContent(contentId) {
@@ -403,13 +472,8 @@
     function toggleFullText(contentId) {
         const content = document.getElementById(contentId);
         const fullText = content.querySelector('p');
-        if (fullText.style.whiteSpace === 'normal') {
-            fullText.style.whiteSpace = 'nowrap';
-            fullText.textContent = fullText.textContent.split('...')[0] + '...';
-        } else {
-            fullText.style.whiteSpace = 'normal';
-            fullText.textContent = fullText.textContent.split('...')[0] + ' full content here.';
-        }
+        fullText.style.whiteSpace =
+            fullText.style.whiteSpace === 'normal' ? 'nowrap' : 'normal';
     }
 </script>
         </a>
