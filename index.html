@@ -313,7 +313,9 @@
         <i class="fas fa-hands-helping"></i>
         <p>Rehabilitation Area</p>
     </a>
+
     <div class="sub-icons-container">
+        <!-- Formal Education -->
         <div class="sub-icon" id="formal-education">
             <a href="javascript:void(0);" onclick="showContent('formal-education-content')">
                 <i class="fas fa-graduation-cap"></i>
@@ -325,6 +327,7 @@
             </div>
         </div>
 
+        <!-- Vocational -->
         <div class="sub-icon" id="vocational">
             <a href="javascript:void(0);" onclick="showContent('vocational-content')">
                 <i class="fas fa-cogs"></i>
@@ -336,6 +339,7 @@
             </div>
         </div>
 
+        <!-- Other Trainings -->
         <div class="sub-icon" id="other-trainings">
             <a href="javascript:void(0);" onclick="showContent('other-trainings-content')">
                 <i class="fas fa-tools"></i>
@@ -347,6 +351,7 @@
             </div>
         </div>
 
+        <!-- Other Rehabilitation Activities -->
         <div class="sub-icon" id="rehabilitation-activities">
             <a href="javascript:void(0);" onclick="showContent('rehabilitation-activities-content')">
                 <i class="fas fa-heartbeat"></i>
@@ -358,6 +363,7 @@
             </div>
         </div>
 
+        <!-- Social Reintegration -->
         <div class="sub-icon" id="social-reintegration">
             <a href="javascript:void(0);" onclick="showContent('social-reintegration-content')">
                 <i class="fas fa-users"></i>
@@ -374,66 +380,69 @@
 <!-- CSS -->
 <style>
     .rehabilitation-area {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
 
     .rehab-main-icon {
         font-size: 24px;
+        display: inline-block;
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        border-radius: 8px;
         cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
+        transition: 0.3s;
     }
 
-    .rehab-main-icon i {
-        font-size: 36px;
-        margin-right: 8px;
+    .rehab-main-icon:hover {
+        background: #0056b3;
     }
 
     .sub-icons-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: none;
+        margin-top: 20px;
     }
 
     .sub-icon {
-        margin: 10px 0;
+        margin-bottom: 15px;
     }
 
     .sub-icon a {
-        display: flex;
-        align-items: center;
-        font-size: 20px;
-        cursor: pointer;
-        text-decoration: none;
+        font-size: 18px;
+        padding: 10px;
+        background: #f8f9fa;
+        border-radius: 8px;
         color: #333;
+        display: inline-block;
+        cursor: pointer;
+        transition: 0.3s;
+        text-decoration: none;
     }
 
-    .sub-icon i {
-        font-size: 28px;
-        margin-right: 8px;
+    .sub-icon a:hover {
+        background: #e2e6ea;
     }
 
     .sub-icon-content {
         display: none;
+        margin-top: 10px;
+        background: #f1f1f1;
         padding: 10px;
+        border-radius: 8px;
         text-align: left;
     }
 
     .read-more {
-        background-color: #007bff;
+        background: #007bff;
         color: white;
         border: none;
         padding: 5px 10px;
         cursor: pointer;
-        margin-top: 10px;
+        border-radius: 4px;
     }
 
     .read-more:hover {
-        background-color: #0056b3;
+        background: #0056b3;
     }
 </style>
 
@@ -441,29 +450,30 @@
 <script>
     function toggleSubIcons() {
         const subIconsContainer = document.querySelector('.sub-icons-container');
-        subIconsContainer.style.display = (subIconsContainer.style.display === 'block') ? 'none' : 'block';
+        subIconsContainer.style.display = subIconsContainer.style.display === 'block' ? 'none' : 'block';
     }
 
     function showContent(contentId) {
+        const content = document.getElementById(contentId);
         const allContents = document.querySelectorAll('.sub-icon-content');
-        allContents.forEach(content => {
-            if (content.id === contentId) {
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            } else {
-                content.style.display = 'none';
-            }
+
+        allContents.forEach(item => {
+            if (item !== content) item.style.display = 'none';
         });
+
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
     }
 
     function toggleFullText(contentId) {
-        const content = document.getElementById(contentId);
-        const fullText = content.querySelector('p');
-        if (fullText.style.whiteSpace === 'normal') {
-            fullText.style.whiteSpace = 'nowrap';
-            fullText.textContent = fullText.textContent.split('...')[0] + '...';
+        const content = document.querySelector(`#${contentId} p`);
+        const isTruncated = content.getAttribute('data-expanded') !== 'true';
+
+        if (isTruncated) {
+            content.innerText = content.innerText.replace('...', ' Full content goes here...');
+            content.setAttribute('data-expanded', 'true');
         } else {
-            fullText.style.whiteSpace = 'normal';
-            fullText.textContent = fullText.textContent.split('...')[0] + ' ' + fullText.textContent.split('...')[1];
+            content.innerText = content.innerText.split(' Full content goes here...')[0] + '...';
+            content.removeAttribute('data-expanded');
         }
     }
 </script>
