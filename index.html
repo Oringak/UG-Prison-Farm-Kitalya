@@ -336,7 +336,7 @@
             </div>
         </div>
 
-        <!-- Other sections remain the same -->
+        <!-- Other sections remain unchanged -->
     </div>
 </div>
 
@@ -357,56 +357,32 @@
         margin-bottom: 20px;
     }
 
-    .sub-icons-container,
+    .sub-icons-container {
+        display: none; /* Initially hidden */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        overflow: auto;
+    }
+
     .sub-icon-content {
+        display: none; /* Initially hidden */
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background: rgba(255, 255, 255, 0.95);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        overflow-y: auto;
-    }
-
-    .sub-icon-content {
         padding: 20px;
-        background: #f1f1f1;
-        border-radius: 10px;
         text-align: center;
-    }
-
-    .sub-icon-content p {
-        font-size: 18px;
-    }
-
-    .read-more {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-
-    .read-more:hover {
-        background-color: #0056b3;
-    }
-
-    .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 18px;
-        background: red;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 5px 10px;
-        cursor: pointer;
+        z-index: 2000;
     }
 </style>
 
@@ -420,11 +396,7 @@
     function showContent(contentId) {
         const allContents = document.querySelectorAll('.sub-icon-content');
         allContents.forEach(content => {
-            if (content.id === contentId) {
-                content.style.display = 'flex';
-            } else {
-                content.style.display = 'none';
-            }
+            content.style.display = content.id === contentId ? 'block' : 'none';
         });
     }
 
@@ -436,7 +408,7 @@
             fullText.textContent = fullText.textContent.split('...')[0] + '...';
         } else {
             fullText.style.whiteSpace = 'normal';
-            fullText.textContent = fullText.textContent.split('...')[0] + ' full content.';
+            fullText.textContent = fullText.textContent.split('...')[0] + ' full content here.';
         }
     }
 </script>
