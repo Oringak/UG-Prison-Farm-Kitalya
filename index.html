@@ -307,21 +307,21 @@
             <i class="fas fa-door-open"></i>
             <p>Main Entrance</p>
         </a>
-        <!-- Rehabilitation Area Section -->
+  <!-- Rehabilitation Area Section -->
 <div class="rehabilitation-area">
     <a href="javascript:void(0);" class="rehab-main-icon" onclick="toggleSubIcons()">
         <i class="fas fa-hands-helping"></i>
         <p>Rehabilitation Area</p>
     </a>
 
-    <div class="sub-icons-container">
+    <div class="sub-icons-container" style="display: none;">
         <!-- Formal Education -->
         <div class="sub-icon" id="formal-education">
             <a href="javascript:void(0);" onclick="showContent('formal-education-content')">
                 <i class="fas fa-graduation-cap"></i>
                 <p>Formal Education</p>
             </a>
-            <div class="sub-icon-content" id="formal-education-content">
+            <div class="sub-icon-content" id="formal-education-content" style="display: none;">
                 <p>The rehabilitation of inmates at the UG Prisons Farm Kitalya through a formal education program...</p>
                 <button class="read-more" onclick="toggleFullText('formal-education-content')">Read More</button>
             </div>
@@ -333,7 +333,7 @@
                 <i class="fas fa-cogs"></i>
                 <p>Vocational</p>
             </a>
-            <div class="sub-icon-content" id="vocational-content">
+            <div class="sub-icon-content" id="vocational-content" style="display: none;">
                 <p>The vocational training program at UG Prisons Farm Kitalya provides inmates with practical skills...</p>
                 <button class="read-more" onclick="toggleFullText('vocational-content')">Read More</button>
             </div>
@@ -345,7 +345,7 @@
                 <i class="fas fa-tools"></i>
                 <p>Other Trainings</p>
             </a>
-            <div class="sub-icon-content" id="other-trainings-content">
+            <div class="sub-icon-content" id="other-trainings-content" style="display: none;">
                 <p>In addition to vocational skills, UG Prisons Farm Kitalya offers other vital training programs...</p>
                 <button class="read-more" onclick="toggleFullText('other-trainings-content')">Read More</button>
             </div>
@@ -357,7 +357,7 @@
                 <i class="fas fa-heartbeat"></i>
                 <p>Other Rehabilitation Activities</p>
             </a>
-            <div class="sub-icon-content" id="rehabilitation-activities-content">
+            <div class="sub-icon-content" id="rehabilitation-activities-content" style="display: none;">
                 <p>UG Prisons Farm Kitalya incorporates a variety of other rehabilitation activities...</p>
                 <button class="read-more" onclick="toggleFullText('rehabilitation-activities-content')">Read More</button>
             </div>
@@ -369,7 +369,7 @@
                 <i class="fas fa-users"></i>
                 <p>Social Reintegration</p>
             </a>
-            <div class="sub-icon-content" id="social-reintegration-content">
+            <div class="sub-icon-content" id="social-reintegration-content" style="display: none;">
                 <p>Social reintegration is a crucial aspect of the rehabilitation process at UG Prisons Farm Kitalya...</p>
                 <button class="read-more" onclick="toggleFullText('social-reintegration-content')">Read More</button>
             </div>
@@ -381,6 +381,7 @@
 <style>
     .rehabilitation-area {
         text-align: center;
+        margin: 20px;
     }
 
     .rehab-main-icon {
@@ -399,7 +400,6 @@
     }
 
     .sub-icons-container {
-        display: none;
         margin-top: 20px;
     }
 
@@ -424,12 +424,11 @@
     }
 
     .sub-icon-content {
-        display: none;
         margin-top: 10px;
         background: #f1f1f1;
         padding: 10px;
         border-radius: 8px;
-        text-align: left;
+        display: none;
     }
 
     .read-more {
@@ -450,30 +449,32 @@
 <script>
     function toggleSubIcons() {
         const subIconsContainer = document.querySelector('.sub-icons-container');
-        subIconsContainer.style.display = subIconsContainer.style.display === 'block' ? 'none' : 'block';
+        subIconsContainer.style.display = subIconsContainer.style.display === 'none' ? 'block' : 'none';
     }
 
     function showContent(contentId) {
         const content = document.getElementById(contentId);
         const allContents = document.querySelectorAll('.sub-icon-content');
-
+        
         allContents.forEach(item => {
-            if (item !== content) item.style.display = 'none';
+            if (item !== content) {
+                item.style.display = 'none';
+            }
         });
 
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
     }
 
     function toggleFullText(contentId) {
         const content = document.querySelector(`#${contentId} p`);
-        const isTruncated = content.getAttribute('data-expanded') !== 'true';
+        const isExpanded = content.dataset.expanded === 'true';
 
-        if (isTruncated) {
-            content.innerText = content.innerText.replace('...', ' Full content goes here...');
-            content.setAttribute('data-expanded', 'true');
+        if (!isExpanded) {
+            content.dataset.expanded = 'true';
+            content.textContent += ' Full content goes here...';
         } else {
-            content.innerText = content.innerText.split(' Full content goes here...')[0] + '...';
-            content.removeAttribute('data-expanded');
+            content.dataset.expanded = 'false';
+            content.textContent = content.textContent.replace(' Full content goes here...', '');
         }
     }
 </script>
