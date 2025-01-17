@@ -307,9 +307,166 @@
             <i class="fas fa-door-open"></i>
             <p>Main Entrance</p>
         </a>
-        <a href="#rehabilitation-area" class="image-item">
-            <i class="fas fa-users"></i>
-            <p>Rehabilitation Area</p>
+        <!-- Rehabilitation Area Section -->
+<div class="rehabilitation-area">
+    <a href="javascript:void(0);" class="rehab-main-icon" onclick="toggleSubIcons()">
+        <i class="fas fa-hands-helping"></i>
+        <p>Rehabilitation Area</p>
+    </a>
+    <div class="sub-icons-container">
+        <div class="sub-icon" id="formal-education">
+            <a href="javascript:void(0);" onclick="showContent('formal-education-content')">
+                <i class="fas fa-graduation-cap"></i>
+                <p>Formal Education</p>
+            </a>
+            <div class="sub-icon-content" id="formal-education-content">
+                <p>The rehabilitation of inmates at the UG Prisons Farm Kitalya through a formal education program...</p>
+                <button class="read-more" onclick="toggleFullText('formal-education-content')">Read More</button>
+            </div>
+        </div>
+
+        <div class="sub-icon" id="vocational">
+            <a href="javascript:void(0);" onclick="showContent('vocational-content')">
+                <i class="fas fa-cogs"></i>
+                <p>Vocational</p>
+            </a>
+            <div class="sub-icon-content" id="vocational-content">
+                <p>The vocational training program at UG Prisons Farm Kitalya provides inmates with practical skills...</p>
+                <button class="read-more" onclick="toggleFullText('vocational-content')">Read More</button>
+            </div>
+        </div>
+
+        <div class="sub-icon" id="other-trainings">
+            <a href="javascript:void(0);" onclick="showContent('other-trainings-content')">
+                <i class="fas fa-tools"></i>
+                <p>Other Trainings</p>
+            </a>
+            <div class="sub-icon-content" id="other-trainings-content">
+                <p>In addition to vocational skills, UG Prisons Farm Kitalya offers other vital training programs...</p>
+                <button class="read-more" onclick="toggleFullText('other-trainings-content')">Read More</button>
+            </div>
+        </div>
+
+        <div class="sub-icon" id="rehabilitation-activities">
+            <a href="javascript:void(0);" onclick="showContent('rehabilitation-activities-content')">
+                <i class="fas fa-heartbeat"></i>
+                <p>Other Rehabilitation Activities</p>
+            </a>
+            <div class="sub-icon-content" id="rehabilitation-activities-content">
+                <p>UG Prisons Farm Kitalya incorporates a variety of other rehabilitation activities...</p>
+                <button class="read-more" onclick="toggleFullText('rehabilitation-activities-content')">Read More</button>
+            </div>
+        </div>
+
+        <div class="sub-icon" id="social-reintegration">
+            <a href="javascript:void(0);" onclick="showContent('social-reintegration-content')">
+                <i class="fas fa-users"></i>
+                <p>Social Reintegration</p>
+            </a>
+            <div class="sub-icon-content" id="social-reintegration-content">
+                <p>Social reintegration is a crucial aspect of the rehabilitation process at UG Prisons Farm Kitalya...</p>
+                <button class="read-more" onclick="toggleFullText('social-reintegration-content')">Read More</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CSS -->
+<style>
+    .rehabilitation-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rehab-main-icon {
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .rehab-main-icon i {
+        font-size: 36px;
+        margin-right: 8px;
+    }
+
+    .sub-icons-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sub-icon {
+        margin: 10px 0;
+    }
+
+    .sub-icon a {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .sub-icon i {
+        font-size: 28px;
+        margin-right: 8px;
+    }
+
+    .sub-icon-content {
+        display: none;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .read-more {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .read-more:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    function toggleSubIcons() {
+        const subIconsContainer = document.querySelector('.sub-icons-container');
+        subIconsContainer.style.display = (subIconsContainer.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function showContent(contentId) {
+        const allContents = document.querySelectorAll('.sub-icon-content');
+        allContents.forEach(content => {
+            if (content.id === contentId) {
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        });
+    }
+
+    function toggleFullText(contentId) {
+        const content = document.getElementById(contentId);
+        const fullText = content.querySelector('p');
+        if (fullText.style.whiteSpace === 'normal') {
+            fullText.style.whiteSpace = 'nowrap';
+            fullText.textContent = fullText.textContent.split('...')[0] + '...';
+        } else {
+            fullText.style.whiteSpace = 'normal';
+            fullText.textContent = fullText.textContent.split('...')[0] + ' ' + fullText.textContent.split('...')[1];
+        }
+    }
+</script>
         </a>
         <a href="#agricultural-training" class="image-item">
             <i class="fas fa-seedling"></i>
