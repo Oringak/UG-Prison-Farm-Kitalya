@@ -294,6 +294,59 @@
 </div>
 
 
+<!-- Image Slider Section -->
+<div style="position: relative; width: 80%; max-width: 800px; margin: auto; overflow: hidden; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+    <div id="slider">
+        <img src="images/aa.jpg" class="active" onclick="openFullscreen(this)" style="width: 100%; display: block; border-radius: 10px; cursor: pointer;">
+        <img src="images/bb.jpg" onclick="openFullscreen(this)" style="width: 100%; display: none; border-radius: 10px; cursor: pointer;">
+        <img src="images/cc.jpg" onclick="openFullscreen(this)" style="width: 100%; display: none; border-radius: 10px; cursor: pointer;">
+        <img src="images/dd.jpg" onclick="openFullscreen(this)" style="width: 100%; display: none; border-radius: 10px; cursor: pointer;">
+        <img src="images/ee.jpg" onclick="openFullscreen(this)" style="width: 100%; display: none; border-radius: 10px; cursor: pointer;">
+    </div>
+</div>
+
+<!-- JavaScript for Image Slider & Zoom -->
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll("#slider img");
+
+    function showSlides() {
+        slides.forEach((slide) => slide.style.display = "none");
+        slideIndex = (slideIndex + 1) % slides.length;
+        slides[slideIndex].style.display = "block";
+    }
+
+    setInterval(showSlides, 3000); // Change image every 3 seconds
+
+    function openFullscreen(img) {
+        const fullscreen = document.createElement("div");
+        fullscreen.style.position = "fixed";
+        fullscreen.style.top = "0";
+        fullscreen.style.left = "0";
+        fullscreen.style.width = "100vw";
+        fullscreen.style.height = "100vh";
+        fullscreen.style.background = "rgba(0, 0, 0, 0.9)";
+        fullscreen.style.display = "flex";
+        fullscreen.style.alignItems = "center";
+        fullscreen.style.justifyContent = "center";
+        fullscreen.style.zIndex = "1000";
+
+        const fullImage = document.createElement("img");
+        fullImage.src = img.src;
+        fullImage.style.maxWidth = "90%";
+        fullImage.style.maxHeight = "90%";
+        fullImage.style.borderRadius = "10px";
+        fullImage.style.boxShadow = "0px 4px 8px rgba(255, 255, 255, 0.5)";
+        fullImage.style.cursor = "pointer";
+
+        fullImage.onclick = function () {
+            document.body.removeChild(fullscreen);
+        };
+
+        fullscreen.appendChild(fullImage);
+        document.body.appendChild(fullscreen);
+    }
+</script>
 
 <!-- Facility Overview Section -->
 <section id="overview" class="facility-overview">
