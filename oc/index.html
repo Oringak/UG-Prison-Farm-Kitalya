@@ -5,26 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Officer in Charge</title>
     <style>
-        /* General Styles */
-        body {
+        /* General Styles - Full Screen */
+        body, html {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
         }
 
-        /* Officer Profile Section */
+        /* Officer Profile Section - Full Screen */
         .officer-profile {
             background-color: #fff;
-            padding: 20px;
+            padding: 30px;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
+            max-width: 800px;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             text-align: left;
+            overflow-y: auto;
         }
 
         /* Image Container */
@@ -36,8 +42,8 @@
         }
 
         .officer-image img {
-            width: 120px; /* Adjusted for full visibility */
-            height: auto;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
@@ -65,12 +71,12 @@
 
         /* Text Styling */
         .officer-details h2 {
-            font-size: 22px;
+            font-size: 24px;
             margin-bottom: 5px;
         }
 
         .officer-details h3 {
-            font-size: 18px;
+            font-size: 20px;
             color: #555;
             margin-bottom: 15px;
         }
@@ -82,10 +88,10 @@
         }
 
         .officer-details ul li {
-            font-size: 16px;
-            line-height: 1.5;
+            font-size: 18px;
+            line-height: 1.6;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         /* Read More Button */
@@ -98,11 +104,14 @@
             text-decoration: none;
             font-weight: bold;
             cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
         }
 
         #read-more-btn:hover {
             text-decoration: underline;
         }
+
     </style>
 </head>
 <body>
