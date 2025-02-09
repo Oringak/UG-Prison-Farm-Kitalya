@@ -11,7 +11,10 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         /* Officer Profile Section */
@@ -21,22 +24,49 @@
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 600px;
-            margin: auto;
+            text-align: left;
         }
 
-        /* Image Styling */
-        .officer-image img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
+        /* Image Container */
+        .officer-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 10px;
+        }
+
+        .officer-image img {
+            width: 120px; /* Adjusted for full visibility */
+            height: auto;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Image Modal (Full-Screen Zoom) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
         }
 
         /* Text Styling */
         .officer-details h2 {
             font-size: 22px;
-            margin: 10px 0 5px;
+            margin-bottom: 5px;
         }
 
         .officer-details h3 {
@@ -45,10 +75,17 @@
             margin-bottom: 15px;
         }
 
-        .officer-details p {
+        .officer-details ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .officer-details ul li {
             font-size: 16px;
             line-height: 1.5;
-            margin-bottom: 10px;
+            font-weight: bold;
+            margin-bottom: 8px;
         }
 
         /* Read More Button */
@@ -73,27 +110,40 @@
     <!-- Officer in Charge Section -->
     <section id="officer-in-charge" class="officer-profile">
         <div class="officer-container">
-            <figure class="officer-image">
+            <!-- Zoomable Image -->
+            <div class="officer-image" onclick="openModal()">
                 <img src="images/bye3.jpeg" alt="Mr. Andrew Kenneth Byekwaso">
-                <figcaption>Mr. Andrew Kenneth Byekwaso</figcaption>
-            </figure>
+            </div>
 
+            <!-- Officer Details -->
             <div class="officer-details">
                 <h2>Mr. Andrew Kenneth Byekwaso</h2>
                 <h3>Superintendent of Prisons (S.P.)</h3>
-                <p>
-                    Mr. Andrew Kenneth Byekwaso is a consummate leader whose strategic foresight and exceptional problem-solving acumen have earned him the respect of both his colleagues and the broader community.
-                </p>
+
+                <!-- Strong-Listed Introductory Notes -->
+                <ul>
+                    <li>A highly strategic and visionary leader.</li>
+                    <li>Expert in problem-solving and decision-making.</li>
+                    <li>Committed to operational efficiency and security.</li>
+                </ul>
+
+                <!-- Read More Text -->
                 <p id="more-text" class="hidden">
-                    His leadership is characterized by a methodical approach to complex challenges, consistently employing analytical rigor and innovative thinking to enhance the operational efficiency of the prison facility.
-                    By fostering a culture of continuous improvement, Mr. Byekwaso has successfully integrated modern systems that bolster security and optimize agricultural production, making the farm an exemplary model of self-sustainability. His decision-making is grounded in a balance of short-term operational needs and long-term strategic vision.
+                    He fosters a culture of continuous improvement and has successfully implemented modern systems that enhance security and optimize agricultural production. Under his leadership, the farm has become a self-sustaining model, balancing short-term needs with long-term strategic vision.
                 </p>
+
                 <a href="javascript:void(0);" onclick="toggleReadMore()" id="read-more-btn">Read More</a>
             </div>
         </div>
     </section>
 
+    <!-- Fullscreen Modal -->
+    <div id="zoom-modal" class="modal" onclick="closeModal()">
+        <img src="images/bye3.jpeg" alt="Zoomed Image">
+    </div>
+
     <script>
+        // Toggle Read More / Read Less
         function toggleReadMore() {
             const moreText = document.getElementById("more-text");
             const btnText = document.getElementById("read-more-btn");
@@ -105,6 +155,16 @@
                 moreText.classList.add("hidden");
                 btnText.textContent = "Read More";
             }
+        }
+
+        // Open Zoom Modal
+        function openModal() {
+            document.getElementById("zoom-modal").style.display = "flex";
+        }
+
+        // Close Zoom Modal
+        function closeModal() {
+            document.getElementById("zoom-modal").style.display = "none";
         }
     </script>
 
