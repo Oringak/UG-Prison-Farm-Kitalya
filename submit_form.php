@@ -1,30 +1,28 @@
 <?php
-$servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$dbname = "ug_prison_farm";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
 
-    $sql = "INSERT INTO feedback (name, email, message) VALUES ('$name', '$email', '$message')";
+    // Email details
+    $to = "oringawalterkisembo@gmail.com";
+    $subject = "New Contact Form Submission";
+    $body = "You have received a new message from your website contact form.\n\n" .
+            "Name: $name\n" .
+            "Email: $email\n\n" .
+            "Message:\n$message";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Thank you for contacting us!";
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
+
+    // Send email
+    if (mail($to, $subject, $body, $headers)) {
+        echo "Thank you for your message. It has been sent.";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Sorry, there was an error sending your message. Please try again later.";
     }
-
-    $conn->close();
+} else {
+    echo "Invalid request.";
 }
 ?>
